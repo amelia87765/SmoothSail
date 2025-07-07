@@ -1,3 +1,4 @@
+import ".././globals.css";
 export const metadata = {
   title: "Strefy czasowe",
 };
@@ -13,4 +14,3 @@ export default function RootLayout({
     </html>
   );
 }
-import "./globals.css";

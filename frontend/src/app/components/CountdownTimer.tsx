@@ -15,7 +15,7 @@ export default function CountdownTimer({
   });
 
   useEffect(() => {
-    const targetDate = new Date("2024-10-27T03:00:00");
+    const targetDate = new Date("2025-10-25T03:00:00");
 
     const updateCountdown = () => {
       const now = new Date();
@@ -43,7 +43,7 @@ export default function CountdownTimer({
   }, []);
 
   return (
-    <div className="text-center text-[#C3D0E1] text-xl sm:text-2xl mt-32">
+    <div className="text-center z-50 text-light_blue text-xl sm:text-2xl mt-32">
       <p className="mb-2 font-semibold">Do zmiany czasu na zimowy pozostało:</p>
       <p className="tracking-widest font-mono">
         {timeLeft.days} dni {timeLeft.hours} godzin {timeLeft.minutes} minut{" "}

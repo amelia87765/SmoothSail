@@ -5,13 +5,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+      'fade-in': 'fadeIn 0.8s ease-out forwards',
+    },
+    keyframes: {
+      fadeIn: {
+        '0%': { opacity: 0 },
+        '100%': { opacity: 1 },
+      },
+    },
       fontFamily: {
         optima: ['"Optima"', 'sans-serif'],
       },
       colors: {
-        bg_top: '#1A280A',
-        bg_mid: '#46351C',
-        primary_red: '#FF4F23',
+        color_bg_top: '#1A280A',
+        color_bg_mid: '#46351C',
+        red: '#FF4F23',
+        light_blue: '#C3D0E1',
       },
     },
   },
