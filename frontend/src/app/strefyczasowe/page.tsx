@@ -5,6 +5,7 @@ import LoaderLogo from "../components/LoaderLogo";
 import TitleSection from "../components/TitleSection";
 import CountdownTimer from "../components/CountdownTimer";
 import Menu from "../components/Menu";
+import FestivalSection from "../components/FestivalSection";
 
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
@@ -19,6 +20,9 @@ export default function Page() {
   const [frameScale, setFrameScale] = useState(1.6);
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
+  const [exitAnimation, setExitAnimation] = useState(false);
+  const [showFestival, setShowFestival] = useState(false);
+  const [readyForExit, setReadyForExit] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -28,20 +32,29 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    if (!loadingComplete) return;
-
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const hash = window.location.hash;
-
-      if (hash === "#home") {
+    const handleHashChange = () => {
+      if (window.location.hash === "#home") {
         setShowText(true);
         setShowFrame(true);
         setBlurAmount(0);
         setFrameScale(1);
         setAnimationComplete(true);
-        return;
+        setReadyForExit(false);
+        setExitAnimation(false);
+        setShowFestival(false);
+        window.scrollTo(0, 0);
       }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (!loadingComplete) return;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
 
       if (scrollY > 20 && !showText) setShowText(true);
       if (scrollY > 300 && !showFrame) setShowFrame(true);
@@ -56,10 +69,15 @@ export default function Page() {
         setBlurAmount(20 - progress * 20);
         setFrameScale(1.6 - progress * 0.6);
 
-        if (progress >= 1 && !animationComplete) {
+        if (scrollY >= 1599 && !animationComplete) {
           setAnimationComplete(true);
-          window.location.hash = "home";
+          setTimeout(() => setReadyForExit(true), 2000);
         }
+      }
+
+      if (readyForExit && !exitAnimation) {
+        setExitAnimation(true);
+        setShowFestival(true);
       }
     };
 
@@ -72,8 +90,14 @@ export default function Page() {
       window.removeEventListener("touchmove", handleScroll);
       window.removeEventListener("wheel", handleScroll);
     };
-  }, [loadingComplete, showText, showFrame, animationComplete]);
-
+  }, [
+    loadingComplete,
+    showText,
+    showFrame,
+    animationComplete,
+    readyForExit,
+    exitAnimation,
+  ]);
   return (
     <div
       className={`relative h-[300vh] w-screen overflow-x-hidden ${optima.className}`}
@@ -101,27 +125,38 @@ export default function Page() {
         </div>
       )}
 
-      {loadingComplete && (
-        <>
-          <TitleSection
-            showText={showText}
-            showFrame={showFrame}
-            blurAmount={blurAmount}
-            frameScale={frameScale}
-          />
+      {!loadingComplete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <LoaderLogo onFinish={() => setLoadingComplete(true)} />
+        </div>
+      )}
 
-          <div
-            className={`fixed inset-0 transition-opacity duration-1000 ${
-              animationComplete ? "opacity-100" : "opacity-0"
-            }`}
-          >
+      <section id="home" className="min-h-[100vh] relative">
+        {loadingComplete && (
+          <TitleSection
+            showText={showText || animationComplete}
+            showFrame={showFrame || animationComplete}
+            blurAmount={animationComplete ? 0 : blurAmount}
+            frameScale={animationComplete ? 1 : frameScale}
+            exitAnimation={exitAnimation}
+          />
+        )}
+      </section>
+
+      {showFestival && <FestivalSection />}
+
+      {loadingComplete && animationComplete && (
+        <>
+          <div className="fixed top-0 w-full z-50 opacity-100">
             <Menu />
-            <div className="fixed top-[70vh] w-full">
-              <CountdownTimer />
-            </div>
+          </div>
+          <div className="fixed left-1/2 transform -translate-x-1/2 z-40 opacity-100 top-[70vh]">
+            <CountdownTimer />
           </div>
         </>
       )}
+
+      <div className="h-[200vh]"></div>
     </div>
   );
 }

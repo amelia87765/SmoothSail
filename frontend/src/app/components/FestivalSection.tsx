@@ -1,21 +1,8 @@
-// components/FestiwalSection.tsx
 "use client";
 import { useEffect, useState } from "react";
 
 export default function FestiwalSection() {
   const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 1600) {
-        setVisible(true);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <section className="h-[100vh] w-full flex flex-col items-center justify-center relative z-30">

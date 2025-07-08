@@ -7,7 +7,15 @@ export default function Menu() {
       <nav className="text-light_blue">
         <ul className="flex gap-6 text-sm">
           <li>
-            <a href="#home">HOME</a>
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = "home";
+              }}
+            >
+              HOME
+            </a>
           </li>
           <li>
             <a href="#muzyka">FESTIWAL</a>
