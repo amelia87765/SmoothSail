@@ -5,7 +5,6 @@ type TitleSectionProps = {
   frameScale: number;
   exitAnimation: boolean;
 };
-
 export default function TitleSection({
   showText,
   showFrame,

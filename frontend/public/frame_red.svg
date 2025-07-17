@@ -1,0 +1,10 @@
+<svg width="1165" height="602" viewBox="0 0 1165 602" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-30" y="-30" width="1225" height="662"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(15px);clip-path:url(#bgblur_0_190_2756_clip_path);height:100%;width:100%"></div></foreignObject><path data-figma-bg-blur-radius="30" d="M4.99999 301C5 220.709 68.0841 146.768 172.905 92.6025C277.472 38.5688 422.278 4.99998 582.5 4.99997C742.722 4.99997 887.528 38.5687 992.095 92.6025C1096.92 146.768 1160 220.709 1160 301C1160 381.291 1096.92 455.232 992.095 509.397C887.528 563.431 742.722 597 582.5 597C422.278 597 277.472 563.431 172.905 509.397C68.0842 455.232 4.99999 381.291 4.99999 301Z" fill="url(#paint0_radial_190_2756)" stroke="#FF4F23" stroke-width="10"/>
+<defs>
+<clipPath id="bgblur_0_190_2756_clip_path" transform="translate(30 30)"><path d="M4.99999 301C5 220.709 68.0841 146.768 172.905 92.6025C277.472 38.5688 422.278 4.99998 582.5 4.99997C742.722 4.99997 887.528 38.5687 992.095 92.6025C1096.92 146.768 1160 220.709 1160 301C1160 381.291 1096.92 455.232 992.095 509.397C887.528 563.431 742.722 597 582.5 597C422.278 597 277.472 563.431 172.905 509.397C68.0842 455.232 4.99999 381.291 4.99999 301Z"/>
+</clipPath><radialGradient id="paint0_radial_190_2756" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(582.5 301) scale(582.5 301)">
+<stop offset="0.6875" stop-color="#D9D9D9" stop-opacity="0.01"/>
+<stop offset="1" stop-color="#FF4F23"/>
+</radialGradient>
+</defs>
+</svg>

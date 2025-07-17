@@ -22,6 +22,7 @@ module.exports = {
         color_bg_mid: '#46351C',
         red: '#FF4F23',
         light_blue: '#C3D0E1',
+        yellow: '#9E9626',
       },
     },
   },
