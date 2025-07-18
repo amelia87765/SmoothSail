@@ -28,11 +28,11 @@ export default function FloatingWordsSection() {
   }, []);
 
   return (
-    <section className="h-[100vh] w-full relative bg-gradient-to-b from-yellow-200 to-yellow-500 overflow-hidden">
+    <section className="h-[100vh] w-full z-5 relative bg-gradient-to-b from-grey via-silver to-yellow overflow-hidden">
       {words.map((word, index) => (
         <span
           key={index}
-          className={`absolute text-4xl transition-all duration-[3000ms] ease-in-out ${
+          className={`absolute z-30 text-6xl transition-all duration-[3000ms] ease-in-out ${
             blurStates[index] ? "blur-sm" : "blur-none"
           }`}
           style={{ top: word.top, left: word.left }}

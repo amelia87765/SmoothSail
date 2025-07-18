@@ -2,8 +2,8 @@
 
 export default function MovieSection() {
   return (
-    <section className="h-[100vh] w-full relative z-30">
-      <div className="fixed inset-0 bg-black">
+    <section className="h-[100vh] w-full relative z-30 overflow-hidden overflow-x-hidden">
+      <div className="absolute inset-0 bg-black">
         <img
           src="/svera.png"
           alt="Festival"
@@ -13,7 +13,7 @@ export default function MovieSection() {
       <img
         src="/video_mask.svg"
         alt="Mask"
-        className="fixed inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
     </section>
   );

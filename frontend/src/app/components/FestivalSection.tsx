@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import MovieSection from "./MovieSection";
-import FloatingWordsSection from "./FloatingTextSection";
 
 const TEXTS = [
   "DWIE STREFY",
@@ -11,7 +9,13 @@ const TEXTS = [
   "PROJEKTOWANIE ŚWIETLNE",
 ];
 
-export default function FestivalSection() {
+interface FestivalSectionProps {
+  onAnimationFinish?: () => void;
+}
+
+export default function FestivalSection({
+  onAnimationFinish,
+}: FestivalSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const festivalRef = useRef<HTMLHeadingElement>(null);
   const textsRef = useRef<Array<HTMLDivElement | null>>([]);
@@ -92,6 +96,7 @@ export default function FestivalSection() {
               onComplete: () => {
                 setAnimationFinished(true);
                 document.body.style.overflow = "auto";
+                if (onAnimationFinish) onAnimationFinish();
               },
             }
           );
@@ -109,10 +114,26 @@ export default function FestivalSection() {
   }, []);
 
   return (
-    <div id="festiwal">
+    <section
+      id="festiwal"
+      className="w-full min-h-screen relative z-20"
+      style={{
+        backgroundColor: "#231F20",
+        transition: "background-color 1s cubic-bezier(0.4,0,0.2,1)",
+      }}
+    >
+      <img
+        src="/strefy.svg"
+        alt="Maska"
+        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none z-5"
+      />
       <div
         ref={containerRef}
-        className="fixed top-0 left-0 w-full h-screen z-50 bg-transparent pointer-events-none"
+        className={`w-full min-h-screen bg-transparent ${
+          animationFinished
+            ? "relative pointer-events-auto"
+            : "fixed top-0 left-0 z-50 pointer-events-none"
+        }`}
       >
         <h2
           ref={festivalRef}
@@ -164,14 +185,6 @@ export default function FestivalSection() {
           JEDNO <br /> KLIMATYCZNE <br /> POŁĄCZENIE
         </div>
       </div>
-
-      {animationFinished && (
-        <>
-          <div style={{ height: "100vh" }}></div>
-          <MovieSection />
-          <FloatingWordsSection />
-        </>
-      )}
-    </div>
+    </section>
   );
 }

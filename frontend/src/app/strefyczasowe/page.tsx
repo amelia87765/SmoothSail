@@ -6,6 +6,9 @@ import TitleSection from "../components/TitleSection";
 import CountdownTimer from "../components/CountdownTimer";
 import Menu from "../components/Menu";
 import FestivalSection from "../components/FestivalSection";
+import MovieSection from "../components/MovieSection";
+import FloatingTextSection from "../components/FloatingTextSection";
+import PartnersSection from "../components/PartnersSection";
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
   weight: "400",
@@ -21,6 +24,8 @@ export default function Page() {
   const [exitAnimation, setExitAnimation] = useState(false);
   const [showFestival, setShowFestival] = useState(false);
   const [readyForExit, setReadyForExit] = useState(false);
+  const [festivalAnimationFinished, setFestivalAnimationFinished] =
+    useState(false);
   //const event = new CustomEvent("restartFestivalAnimation");
   //window.dispatchEvent(event);
   useEffect(() => {
@@ -40,7 +45,6 @@ export default function Page() {
         setReadyForExit(false);
         setExitAnimation(false);
         setShowFestival(false);
-        window.scrollTo(0, 0);
       }
     };
     window.addEventListener("hashchange", handleHashChange);
@@ -89,7 +93,7 @@ export default function Page() {
   ]);
   return (
     <div
-      className={`relative h-[300vh] w-screen overflow-x-hidden ${optima.className}`}
+      className={`relative w-screen overflow-x-hidden ${optima.className}`}
       id="home"
     >
       <div className="fixed inset-0 z-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red" />
@@ -128,7 +132,9 @@ export default function Page() {
       </section>
       {showFestival && (
         <section id="festiwal">
-          <FestivalSection />
+          <FestivalSection
+            onAnimationFinish={() => setFestivalAnimationFinished(true)}
+          />
         </section>
       )}
       {loadingComplete && animationComplete && (
@@ -139,6 +145,19 @@ export default function Page() {
           <div className="fixed left-1/2 transform -translate-x-1/2 z-40 opacity-100 top-[70vh]">
             <CountdownTimer />
           </div>
+        </>
+      )}
+      {festivalAnimationFinished && (
+        <>
+          <section id="movie" className="min-h-screen w-full">
+            <MovieSection />
+          </section>
+          <section id="floating-words" className="min-h-screen w-full">
+            <FloatingTextSection />
+          </section>
+          <section id="partners" className="min-h-screen w-full">
+            <PartnersSection />
+          </section>
         </>
       )}
       <div className="h-[200vh]"></div>
