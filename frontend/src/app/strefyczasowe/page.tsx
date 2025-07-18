@@ -126,7 +126,11 @@ export default function Page() {
           />
         )}
       </section>
-      {showFestival && <FestivalSection />}
+      {showFestival && (
+        <section id="festiwal">
+          <FestivalSection />
+        </section>
+      )}
       {loadingComplete && animationComplete && (
         <>
           <div className="fixed top-0 w-full z-50 opacity-100">
