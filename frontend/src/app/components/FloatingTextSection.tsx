@@ -28,7 +28,7 @@ export default function FloatingWordsSection() {
   }, []);
 
   return (
-    <section className="h-[100vh] w-full z-5 relative bg-gradient-to-b from-grey via-silver to-yellow overflow-hidden">
+    <section className="h-[100vh] w-full z-5 relative bg-gradient-to-b from-grey via-yellow to-black overflow-hidden">
       {words.map((word, index) => (
         <span
           key={index}

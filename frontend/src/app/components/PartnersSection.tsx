@@ -1,7 +1,5 @@
 "use client";
-
 import { useState } from "react";
-
 const accordionData = [
   {
     question: "KOGO SZUKAMY?",
@@ -20,27 +18,22 @@ const accordionData = [
     ],
   },
 ];
-
 export default function Partnerzy() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
   return (
-    <section className="w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-8 md:gap-10 z-20 relative overflow-x-hidden">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-center text-white">
+    <section className="bg-gradient-to-b from-black via-partners_bg to-black w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-8 md:gap-10 z-5 relative overflow-x-hidden">
+      <h2 className="z-20 text-9xl sm:text-10xl md:text-12xl text-center text-white">
         PARTNERZY
       </h2>
-      <p className="text-lg md:text-xl text-center text-white max-w-2xl">
+      <p className="z-20 text-lg md:text-xl text-center text-light_blue max-w-2xl">
         Dołącz do nas i stwórz własną strefę
       </p>
-
       <div className="w-full max-w-5xl flex flex-col gap-6 md:gap-8 z-20 px-2 sm:px-4">
         {accordionData.map((item, index) => {
           const isOpen = openIndex === index;
-
           return (
             <div
               key={index}
@@ -61,7 +54,6 @@ export default function Partnerzy() {
                   <h3 className="text-xl sm:text-2xl md:text-3xl text-sky-900 font-semibold">
                     {item.question}
                   </h3>
-
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       isOpen ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"

@@ -9,6 +9,7 @@ import FestivalSection from "../components/FestivalSection";
 import MovieSection from "../components/MovieSection";
 import FloatingTextSection from "../components/FloatingTextSection";
 import PartnersSection from "../components/PartnersSection";
+import EditionsSection from "../components/EditionsSection";
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
   weight: "400",
@@ -154,6 +155,9 @@ export default function Page() {
           </section>
           <section id="floating-words" className="min-h-screen w-full">
             <FloatingTextSection />
+          </section>
+          <section id="editions" className="min-h-screen w-full">
+            <EditionsSection />
           </section>
           <section id="partners" className="min-h-screen w-full">
             <PartnersSection />
