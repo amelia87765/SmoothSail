@@ -116,17 +116,12 @@ export default function FestivalSection({
   return (
     <section
       id="festiwal"
-      className="w-full min-h-screen relative z-20"
+      className="w-full min-h-screen relative z-5"
       style={{
         backgroundColor: "#231F20",
         transition: "background-color 1s cubic-bezier(0.4,0,0.2,1)",
       }}
     >
-      <img
-        src="/strefy.svg"
-        alt="Maska"
-        className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none z-5"
-      />
       <div
         ref={containerRef}
         className={`w-full min-h-screen bg-transparent ${
@@ -137,12 +132,12 @@ export default function FestivalSection({
       >
         <h2
           ref={festivalRef}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] text-light_blue"
+          className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] text-light_blue"
         >
           FESTIWAL
         </h2>
 
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center space-y-8">
+        <div className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center space-y-8">
           {TEXTS.map((text, index) => (
             <div
               key={text}
@@ -163,7 +158,7 @@ export default function FestivalSection({
           <img
             src="/frame_yellow.svg"
             alt="Yellow Frame"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto max-w-[90vw]"
+            className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto max-w-[90vw]"
           />
         </div>
 
@@ -174,13 +169,13 @@ export default function FestivalSection({
           <img
             src="/frame_red.svg"
             alt="Red Frame"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto max-w-[90vw]"
+            className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto max-w-[90vw]"
           />
         </div>
 
         <div
           ref={finalTextRef}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-red text-[7rem] leading-[0.9] opacity-0 text-center z-30 transform-none"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-red text-[7rem] leading-[0.9] opacity-0 text-center z-50 transform-none"
         >
           JEDNO <br /> KLIMATYCZNE <br /> POŁĄCZENIE
         </div>
