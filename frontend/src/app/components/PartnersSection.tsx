@@ -1,28 +1,37 @@
 "use client";
+
 import { useState } from "react";
+
 const accordionData = [
   {
     question: "KOGO SZUKAMY?",
     answer: [
-      "Firmy, która chce wzmocnić swój wizerunek",
-      "Partnera do współpracy promocyjnej",
-      "Organizacji wspierającej inicjatywy kulturalne",
+      "Sponsora, który chce nie tylko wesprzeć festiwal finansowo,",
+      "ale także stać się jego częścią,",
+      "wpisze się w bardzo narracyjny charakter wydarzenia,",
+      "popuści wodze fantazji i stworzy własną strefę jedyną w swoim rodzaju,",
+      "chce się pokazać trójmiejskim fanom kultury.",
     ],
   },
   {
     question: "CO GWARANTUJEMY?",
     answer: [
-      "Sponsora, który wesprze wydarzenie finansowo",
-      "Dostęp do szerokiego grona odbiorców",
-      "Widoczność w materiałach promocyjnych",
+      "Bycie głównym sponsorem festiwalu,",
+      "przestrzeń na wydarzeniu w samym centrum Gdyni,",
+      "ekspozycję marki w materiałach promocyjnych online i offline,",
+      "bycie kluczową częścią nowoczesnego immersyjnego projektu,",
+      "profesjonalizm, ....",
     ],
   },
 ];
+
 export default function Partnerzy() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   return (
     <section className="bg-gradient-to-b from-black via-partners_bg to-black w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-8 md:gap-10 z-5 relative overflow-x-hidden">
       <h2 className="z-20 text-9xl sm:text-10xl md:text-12xl text-center text-white">
@@ -31,35 +40,51 @@ export default function Partnerzy() {
       <p className="z-20 text-lg md:text-xl text-center text-light_blue max-w-2xl">
         Dołącz do nas i stwórz własną strefę
       </p>
-      <div className="w-full max-w-5xl flex flex-col gap-6 md:gap-8 z-20 px-2 sm:px-4">
+
+      <div className="w-full max-w-5xl flex flex-col gap-4 md:gap-6 z-20 px-2 sm:px-4">
         {accordionData.map((item, index) => {
           const isOpen = openIndex === index;
+          const ry = isOpen ? 120 : 60;
+
           return (
             <div
               key={index}
               onClick={() => toggle(index)}
-              className="relative cursor-pointer w-full group"
+              className="cursor-pointer w-full"
             >
-              <div
-                className={`w-full bg-no-repeat bg-center bg-contain transition-all duration-500 ease-in-out ${
-                  isOpen
-                    ? "min-h-[300px] md:min-h-[350px]"
-                    : "min-h-[120px] md:min-h-[150px]"
-                }`}
-                style={{
-                  backgroundImage: `url("/frame_yellow_blue.svg")`,
-                }}
-              >
-                <div className="flex flex-col items-center justify-center text-center h-full px-6 md:px-12 lg:px-16 py-8 md:py-12">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl text-sky-900 font-semibold">
+              <div className="relative w-full">
+                <svg
+                  viewBox="0 0 600 240"
+                  className="w-full h-auto transition-all duration-500 ease-in-out"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <ellipse
+                    cx="300"
+                    cy="120"
+                    rx="280"
+                    ry={ry}
+                    fill="url(#grad)"
+                    className="transition-all duration-500"
+                  />
+                  <defs>
+                    <radialGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stopColor="#C3D0E1" />
+                      <stop offset="100%" stopColor="#9E9626" />
+                    </radialGradient>
+                  </defs>
+                </svg>
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-12 lg:px-16">
+                  <h3 className="text-[3rem] text-blue font-semibold">
                     {item.question}
                   </h3>
+
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen ? "max-h-96 mt-4 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="space-y-2 text-base sm:text-lg md:text-xl text-gray-800 pb-4">
+                    <div className="space-y-2 text-base sm:text-lg md:text-xl text-gray">
                       {item.answer.map((a, i) => (
                         <p key={i}>{a}</p>
                       ))}

@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 
 const words = [
-  { text: "Zanurz się", top: "10%", left: "20%" },
-  { text: "Stań", top: "25%", left: "60%" },
+  { text: "Zanurz się", top: "15%", left: "10%" },
+  { text: "Stań", top: "15%", left: "65%" },
   { text: "Przemieszczaj", top: "40%", left: "30%" },
-  { text: "Znajdź", top: "55%", left: "70%" },
-  { text: "Błądź", top: "70%", left: "15%" },
-  { text: "Odetchnij", top: "85%", left: "50%" },
+  { text: "Znajdź", top: "35%", left: "70%" },
+  { text: "Błądź", top: "70%", left: "20%" },
+  { text: "Odetchnij", top: "70%", left: "60%" },
 ];
 
 export default function FloatingWordsSection() {
@@ -32,7 +32,7 @@ export default function FloatingWordsSection() {
       {words.map((word, index) => (
         <span
           key={index}
-          className={`absolute z-30 text-6xl transition-all duration-[3000ms] ease-in-out ${
+          className={`absolute z-30 text-6xl transition-all duration-[1500ms] ease-in-out ${
             blurStates[index] ? "blur-sm" : "blur-none"
           }`}
           style={{ top: word.top, left: word.left }}
