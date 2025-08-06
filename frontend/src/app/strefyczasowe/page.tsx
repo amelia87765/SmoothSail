@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import LoaderLogo from "../components/LoaderLogo";
 import TitleSection from "../components/TitleSection";
 import CountdownTimer from "../components/CountdownTimer";
-import Menu from "../components/Menu";
 import FestivalSection from "../components/FestivalSection";
 import MovieSection from "../components/MovieSection";
 import FloatingTextSection from "../components/FloatingTextSection";
@@ -21,6 +20,7 @@ export default function Page() {
   const [blurAmount, setBlurAmount] = useState(20);
   const [frameScale, setFrameScale] = useState(1.6);
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const [animationComplete, setAnimationComplete] = useState(false);
   const [exitAnimation, setExitAnimation] = useState(false);
   const [showFestival, setShowFestival] = useState(false);
@@ -97,7 +97,6 @@ export default function Page() {
       className={`relative w-screen overflow-x-hidden ${optima.className}`}
       id="home"
     >
-      <div className="fixed inset-0 z-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red" />
       <div
         className="fixed inset-0 z-10 pointer-events-none opacity-25"
         style={{
@@ -106,7 +105,7 @@ export default function Page() {
         }}
       />
       <img
-        src="/strefy.svg"
+        src="/strefy_long.svg"
         alt="Mask"
         className="fixed inset-0 z-10 w-full h-full object-cover object-top pointer-events-none"
       />
@@ -115,19 +114,14 @@ export default function Page() {
           <LoaderLogo onFinish={() => setLoadingComplete(true)} />
         </div>
       )}
-      {!loadingComplete && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <LoaderLogo onFinish={() => setLoadingComplete(true)} />
-        </div>
-      )}
+
       <section id="home" className="min-h-[100vh] relative">
         {loadingComplete && (
           <TitleSection
-            showText={showText || animationComplete}
-            showFrame={showFrame || animationComplete}
-            blurAmount={animationComplete ? 0 : blurAmount}
-            frameScale={animationComplete ? 1 : frameScale}
-            exitAnimation={exitAnimation}
+            onAnimationComplete={() => {
+              setAnimationComplete(true);
+              setTimeout(() => setShowFestival(true), 2000);
+            }}
           />
         )}
       </section>
@@ -140,9 +134,6 @@ export default function Page() {
       )}
       {loadingComplete && animationComplete && (
         <>
-          <div className="fixed top-0 w-full z-50 opacity-100">
-            <Menu />
-          </div>
           <div className="fixed left-1/2 transform -translate-x-1/2 z-40 opacity-100 top-[70vh]">
             <CountdownTimer />
           </div>
@@ -164,7 +155,6 @@ export default function Page() {
           </section>
         </>
       )}
-      <div className="h-[200vh]"></div>
     </div>
   );
 }
