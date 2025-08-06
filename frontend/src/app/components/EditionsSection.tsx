@@ -13,16 +13,16 @@ export default function EditionsSection() {
   }
 
   return (
-    <section className="min-h-[200vh] w-full relative bg-black overflow-hidden px-6 py-16">
-      <h1 className="absolute z-20 left-1/2 -translate-x-1/2 top-12 text-[9rem] text-light_blue drop-shadow-lg">
+    <section className="min-h-screen w-full relative bg-black overflow-hidden px-[clamp(1rem,3vw,2rem)] py-[clamp(2rem,5vh,4rem)]">
+      <h1 className="absolute z-20 left-1/2 -translate-x-1/2 top-[clamp(2rem,8vh,4rem)] text-[clamp(3rem,8vw,9rem)] text-light_blue drop-shadow-lg">
         EDYCJE
       </h1>
 
-      <div className="absolute left-8 top-[calc(12rem+4vw)] z-20 flex items-start gap-10">
-        <div className="text-[5rem] text-red select-none">
+      <div className="absolute left-[clamp(1rem,3vw,2rem)] top-[clamp(10rem,25vh,16rem)] z-20 flex items-start gap-[clamp(1rem,2vw,1.5rem)]">
+        <div className="text-[clamp(2rem,5vw,5rem)] text-red select-none">
           2025 <span className="text-red">(-1)</span>
         </div>
-        <div className="text-blue text-xl flex flex-col justify-center leading-tight pt-3">
+        <div className="text-blue text-[clamp(0.875rem,1.5vw,1.25rem)] flex flex-col justify-center leading-tight pt-[0.5rem]">
           <span>Koniec października,</span>
           <span>zmiana czasu na zimowy</span>
         </div>
@@ -31,10 +31,10 @@ export default function EditionsSection() {
       <img
         src="/logo_strefy.svg"
         alt="logo"
-        className="absolute left-8 top-[calc(12rem+12vw)] w-28 h-28 z-20"
+        className="absolute left-[clamp(1rem,3vw,2rem)] top-[clamp(14rem,35vh,20rem)] w-[clamp(4rem,8vw,7rem)] h-[clamp(4rem,8vw,7rem)] z-20"
       />
 
-      <div className="mt-[28rem] flex flex-col gap-8 max-w-7xl mx-auto z-10 relative">
+      <div className="mt-[clamp(16rem,40vh,28rem)] flex flex-col gap-[clamp(1rem,2vh,1.5rem)] max-w-7xl mx-auto z-10 relative">
         {groupedArtists.map(([a1, a2], groupIndex) => {
           const isExpanded1 = expandedId === a1?.id;
           const isExpanded2 = expandedId === a2?.id;
@@ -42,18 +42,16 @@ export default function EditionsSection() {
           return (
             <div
               key={groupIndex}
-              className="flex flex-col md:flex-row gap-8 w-full transition-all duration-700"
+              className="flex flex-col md:flex-row gap-[clamp(1rem,2vh,1.5rem)] w-full transition-all duration-700"
             >
               {isExpanded1 ? (
                 <ExpandedArtistCard
                   artist={a1}
-                  isLeft
                   onClose={() => setExpandedId(null)}
                 />
               ) : isExpanded2 ? (
                 <ExpandedArtistCard
                   artist={a2}
-                  isLeft={false}
                   onClose={() => setExpandedId(null)}
                 />
               ) : (

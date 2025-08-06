@@ -1,10 +1,16 @@
-export default function ArtistCard({ artist, onClick }: any) {
+export default function ArtistCard({
+  artist,
+  onClick,
+}: {
+  artist: any;
+  onClick: () => void;
+}) {
   return (
     <div
-      className="w-full min-h-[480px] bg-artist_bg cursor-pointer overflow-hidden relative flex flex-col justify-between transition-all duration-700 ease-in-out rounded-2xl"
+      className="w-full h-[clamp(50svh,60dvh,70lvh)] bg-artist_bg cursor-pointer overflow-hidden relative flex flex-col rounded-2xl"
       onClick={onClick}
     >
-      <div className="relative w-full h-[260px] overflow-hidden rounded-t-2xl">
+      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl">
         <img
           src={artist.image}
           alt={artist.name}
@@ -17,9 +23,11 @@ export default function ArtistCard({ artist, onClick }: any) {
         />
       </div>
 
-      <div className="flex justify-between items-center px-4 py-3 text-light_blue text-2xl">
-        <span>{artist.name}</span>
-        <span className="text-sm bg-red text-black px-3 py-1 rounded-full">
+      <div className="flex justify-between items-center px-[clamp(1rem,2vw,1.5rem)] py-[1em]">
+        <span className="font-optima text-grey text-[clamp(1.5rem,3vi,2rem)]">
+          {artist.name}
+        </span>
+        <span className="font-gil-sans text-[clamp(0.75rem,1.5vi,1rem)] bg-red text-black px-[0.75em] py-[0.25em] rounded-full">
           {artist.specialty}
         </span>
       </div>
