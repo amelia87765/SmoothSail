@@ -6,20 +6,20 @@ const accordionData = [
   {
     question: "KOGO SZUKAMY?",
     answer: [
-      "Sponsora, który chce nie tylko wesprzeć festiwal finansowo,",
-      "ale także stać się jego częścią,",
-      "wpisze się w bardzo narracyjny charakter wydarzenia,",
-      "popuści wodze fantazji i stworzy własną strefę jedyną w swoim rodzaju,",
-      "chce się pokazać trójmiejskim fanom kultury.",
+      "Sponsora, ktory chce nie tylko wesprzec festiwal finansowo,",
+      "ale takze stac sie jego czescia,",
+      "wpisze sie w bardzo narracyjny charakter wydarzenia,",
+      "popusci wodze fantazji i stworzy wlasna strefe jedyna w swoim rodzaju,",
+      "chce sie pokazac trojmiejskim fanom kultury.",
     ],
   },
   {
     question: "CO GWARANTUJEMY?",
     answer: [
-      "Bycie głównym sponsorem festiwalu,",
-      "przestrzeń na wydarzeniu w samym centrum Gdyni,",
-      "ekspozycję marki w materiałach promocyjnych online i offline,",
-      "bycie kluczową częścią nowoczesnego immersyjnego projektu,",
+      "Bycie glownym sponsorem festiwalu,",
+      "przestrzen na wydarzeniu w samym centrum Gdyni,",
+      "ekspozycje marki w materialach promocyjnych online i offline,",
+      "bycie kluczowa czescia nowoczesnego immersyjnego projektu,",
       "profesjonalizm, ....",
     ],
   },
@@ -38,24 +38,29 @@ export default function Partnerzy() {
         PARTNERZY
       </h2>
       <p className="z-20 text-lg md:text-xl text-center text-light_blue max-w-2xl">
-        Dołącz do nas i stwórz własną strefę
+        Dolacz do nas i stworz wlasna strefe
       </p>
 
-      <div className="w-full max-w-5xl flex flex-col gap-4 md:gap-6 z-20 px-2 sm:px-4">
+      <div className="w-full max-w-5xl flex flex-col gap-2 z-20 px-2 sm:px-4">
         {accordionData.map((item, index) => {
           const isOpen = openIndex === index;
           const ry = isOpen ? 120 : 60;
-
+          const minHeight = isOpen ? "16rem" : "8rem";
           return (
             <div
               key={index}
               onClick={() => toggle(index)}
               className="cursor-pointer w-full"
             >
-              <div className="relative w-full">
+              <div
+                className="relative w-full transition-all duration-500 ease-in-out"
+                style={{
+                  minHeight,
+                }}
+              >
                 <svg
                   viewBox="0 0 600 240"
-                  className="w-full h-auto transition-all duration-500 ease-in-out"
+                  className="w-full h-full transition-all duration-500 ease-in-out"
                   preserveAspectRatio="xMidYMid meet"
                 >
                   <ellipse
@@ -78,7 +83,6 @@ export default function Partnerzy() {
                   <h3 className="text-[3rem] text-blue font-semibold">
                     {item.question}
                   </h3>
-
                   <div
                     className={`overflow-hidden transition-all duration-500 ease-in-out ${
                       isOpen ? "max-h-96 mt-4 opacity-100" : "max-h-0 opacity-0"

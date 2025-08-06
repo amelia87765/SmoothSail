@@ -125,7 +125,7 @@ export default function TitleSection({
           top: "calc(35vh + 14rem + 2rem)",
         }}
       >
-        Indoorowy festiwal w Trójmieście
+        Indoorowy festiwal w Trojmiescie
         <br />
         na koniec października—w noc
         <br />
