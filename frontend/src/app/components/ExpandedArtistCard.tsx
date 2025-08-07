@@ -25,7 +25,7 @@ export default function ExpandedArtistCard({
   }, []);
 
   return (
-    <div className="w-full h-[clamp(50svh,60dvh,70lvh)] bg-artist_bg rounded-2xl flex flex-col md:flex-row overflow-hidden">
+    <div className="w-full h-[clamp(40svh,50dvh,60lvh)] bg-artist_bg rounded-2xl flex flex-col md:flex-row overflow-hidden">
       <div className="w-full md:w-1/2 flex flex-col">
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <img
