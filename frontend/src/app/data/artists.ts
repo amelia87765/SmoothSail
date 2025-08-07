@@ -3,9 +3,10 @@ export const artists = [
     id: "hatti",
     name: "Piotr Kaliński (Hatti Vatti)",
     specialty: "MUZYKA",
-    image: "/artists_images/Milena_Glowacka.png",
+    image: "/artists_images/Hatti_Vatti.jpg",
     mask: "/artists_masks/artist_mask1.svg",
-    description: "Opis artystki do uzupełnienia.",
+    description: "Piotr Kaliński, kompozytor i producent znany z projektów takich jak Hinode Tapes, Hatti Vatti czy Nanook of the North. Artysta zaprezentuje nowe ambientowe znaleziska płytowe, które przywiózł z licznych podróży po świecie."
+
   },
   {
     id: "inner",
@@ -25,11 +26,11 @@ export const artists = [
   },
    {
     id: "emerai",
-    name: "Emerai",
+    name: "emerai",
     specialty: "MUZYKA",
-    image: "/artists_images/Kasia_Lins.jpg",
+    image: "/artists_images/Emerai.jpg",
     mask: "/artists_masks/artist_mask2.svg",
-    description: "Wywodząca się z trójmiejskiej sceny DJ-ka, która swoją selekcją muzyczną zmusza do refleksji, a chwilę później eksploduje nieskępowaną enrgią.",
+    description: "Wywodząca się z trójmiejskiej sceny DJ-ka, która swoją selekcją muzyczną zmusza do refleksji, a chwilę później eksploduje nieskrępowaną energią. W jej setach gęsta mieszanka emocji spotyka się z ciężarem industrialnego brzmienia i momentami ulgi, które tworzą niezapomnianą podróż. Jej podcasty trafiły do katalogów Unusual Records i Black Line Recordings. W eklektycznych setach emerai głębokie, psychodeliczne techno przenika się z IDM, deconstructed club, elektro czy frywolnym housem - zawsze prowadząc słuchaczy w nieoczywiste, pełne napięcia i ulgi zakątki muzyki elektronicznej.",
   },
   {
     id: "siekirka",
@@ -70,7 +71,9 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/KsaweryKomputery.jpg",
     mask: "/artists_masks/artist_mask2.svg",
-    description: "Opis artystki do uzupełnienia.",
+    description: "polskie studio kreatywne założone przez artystę nowych mediów Ksawerego Kirklewskiego. Łączy sztukę generatywną, design i nowe technologie, tworząc immersyjne doświadczenia wizualne - od interaktywnych instalacji, przez animacje, po performance audiowizualne i dzieła fizyczno-cyfrowe. "
++ "Studio specjalizuje się w projektach opartych na systemach generatywnych, interakcji człowiek-komputer i narracjach czasu rzeczywistego. Ich prace balansują między światem fizycznym a cyfrowym, wykorzystując światło, dźwięk i ruch. "
++ "Wśród słynnych realizacji znalazły się m.in. instalacje sceniczne dla Childish Gambino i zespołu Juliana Casablancasa - The Voidz, projekty FLUX, ENTER, LOTUS oraz teledysk Symphony in Acid dla Maxa Coopera.",
   },
   {
     id: "nene",
