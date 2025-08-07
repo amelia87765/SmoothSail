@@ -43,12 +43,16 @@ export default function CountdownTimer({
   }, []);
 
   return (
-    <div className="text-center z-50 text-light_blue text-xl sm:text-2xl mt-32">
-      <p className="mb-2 font-semibold">Do zmiany czasu na zimowy pozostało:</p>
-      <p className="tracking-widest font-mono">
-        {timeLeft.days} dni {timeLeft.hours} godzin {timeLeft.minutes} minut{" "}
-        {timeLeft.seconds} sekund
+    <div className={`text-center z-50 text-light_blue mt-32 px-4 ${className}`}>
+      <p className="mb-2 text-base sm:text-xl md:text-2xl">
+        Do zmiany czasu na zimowy pozostało:
       </p>
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-4 text-sm sm:text-base md:text-xl tracking-widest">
+        <span>{timeLeft.days} dni</span>
+        <span>{timeLeft.hours} godzin</span>
+        <span>{timeLeft.minutes} minut</span>
+        <span>{timeLeft.seconds} sekund</span>
+      </div>
     </div>
   );
 }

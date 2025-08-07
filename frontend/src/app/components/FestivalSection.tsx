@@ -114,17 +114,10 @@ export default function FestivalSection({
   }, []);
 
   return (
-    <section
-      id="festiwal"
-      className="w-full min-h-screen relative z-5"
-      style={{
-        backgroundColor: "#231F20",
-        transition: "background-color 1s cubic-bezier(0.4,0,0.2,1)",
-      }}
-    >
+    <section id="festiwal" className="w-full min-h-screen relative z-5">
       <div
         ref={containerRef}
-        className={`w-full min-h-screen bg-transparent ${
+        className={`w-full min-h-screen ${
           animationFinished
             ? "relative pointer-events-auto"
             : "fixed top-0 left-0 z-50 pointer-events-none"

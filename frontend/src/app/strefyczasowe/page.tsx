@@ -9,6 +9,7 @@ import MovieSection from "../components/MovieSection";
 import FloatingTextSection from "../components/FloatingTextSection";
 import PartnersSection from "../components/PartnersSection";
 import EditionsSection from "../components/EditionsSection";
+import gsap from "gsap";
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
   weight: "400",
@@ -93,10 +94,9 @@ export default function Page() {
     exitAnimation,
   ]);
   return (
-    <div
-      className={`relative w-screen overflow-x-hidden ${optima.className}`}
-      id="home"
-    >
+    <div className={`relative w-screen overflow-x-hidden ${optima.className}`}>
+      <div className="fixed inset-0 bg-[#231F20] z-0"></div>
+
       <div
         className="fixed inset-0 z-10 pointer-events-none opacity-25"
         style={{
@@ -105,7 +105,7 @@ export default function Page() {
         }}
       />
       <img
-        src="/strefy_long.svg"
+        src="/strefy.svg"
         alt="Mask"
         className="fixed inset-0 z-10 w-full h-full object-cover object-top pointer-events-none"
       />
@@ -115,16 +115,14 @@ export default function Page() {
         </div>
       )}
 
-      <section id="home" className="min-h-[100vh] relative">
-        {loadingComplete && (
-          <TitleSection
-            onAnimationComplete={() => {
-              setAnimationComplete(true);
-              setTimeout(() => setShowFestival(true), 2000);
-            }}
-          />
-        )}
-      </section>
+      {loadingComplete && (
+        <TitleSection
+          onAnimationComplete={() => {
+            setAnimationComplete(true);
+            setTimeout(() => setShowFestival(true), 2000);
+          }}
+        />
+      )}
       {showFestival && (
         <section id="festiwal">
           <FestivalSection
