@@ -46,7 +46,45 @@ export default function ExpandedArtistCard({
               optima.className + " text-grey text-[clamp(1.5rem,3vi,2rem)]"
             }
           >
-            {artist.name}
+            {artist.name
+              .split("\n")
+              .map(
+                (
+                  line:
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | React.ReactElement<
+                        unknown,
+                        string | React.JSXElementConstructor<any>
+                      >
+                    | Iterable<React.ReactNode>
+                    | React.ReactPortal
+                    | Promise<
+                        | string
+                        | number
+                        | bigint
+                        | boolean
+                        | React.ReactPortal
+                        | React.ReactElement<
+                            unknown,
+                            string | React.JSXElementConstructor<any>
+                          >
+                        | Iterable<React.ReactNode>
+                        | null
+                        | undefined
+                      >
+                    | null
+                    | undefined,
+                  idx: React.Key | null | undefined
+                ) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                )
+              )}
           </span>
           <span
             className={
@@ -59,7 +97,7 @@ export default function ExpandedArtistCard({
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 p-[clamp(1rem,2vw,1.5rem)] overflow-y-auto">
+      <div className="w-full md:w-1/2 p-[clamp(1rem,2vw,1.5rem)] overflow-y-auto relative">
         <button
           onClick={onClose}
           style={{ fontFamily: "gil-sans-nova, sans-serif" }}
@@ -71,7 +109,45 @@ export default function ExpandedArtistCard({
           style={{ fontFamily: "gil-sans-nova, sans-serif" }}
           className="text-grey text-[clamp(1rem,1.5vi,1.25rem)] leading-relaxed pt-[2em]"
         >
-          {artist.description}
+          {artist.description
+            .split("\n")
+            .map(
+              (
+                line:
+                  | string
+                  | number
+                  | bigint
+                  | boolean
+                  | React.ReactElement<
+                      unknown,
+                      string | React.JSXElementConstructor<any>
+                    >
+                  | Iterable<React.ReactNode>
+                  | React.ReactPortal
+                  | Promise<
+                      | string
+                      | number
+                      | bigint
+                      | boolean
+                      | React.ReactPortal
+                      | React.ReactElement<
+                          unknown,
+                          string | React.JSXElementConstructor<any>
+                        >
+                      | Iterable<React.ReactNode>
+                      | null
+                      | undefined
+                    >
+                  | null
+                  | undefined,
+                idx: React.Key | null | undefined
+              ) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              )
+            )}
         </p>
       </div>
     </div>

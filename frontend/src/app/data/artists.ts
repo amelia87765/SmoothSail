@@ -71,7 +71,7 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/KsaweryKomputery.jpg",
     mask: "/artists_masks/artist_mask2.svg",
-    description: "polskie studio kreatywne założone przez artystę nowych mediów Ksawerego Kirklewskiego. Łączy sztukę generatywną, design i nowe technologie, tworząc immersyjne doświadczenia wizualne - od interaktywnych instalacji, przez animacje, po performance audiowizualne i dzieła fizyczno-cyfrowe. "
+    description: "Polskie studio kreatywne założone przez artystę nowych mediów Ksawerego Kirklewskiego. Łączy sztukę generatywną, design i nowe technologie, tworząc immersyjne doświadczenia wizualne - od interaktywnych instalacji, przez animacje, po performance audiowizualne i dzieła fizyczno-cyfrowe. "
 + "Studio specjalizuje się w projektach opartych na systemach generatywnych, interakcji człowiek-komputer i narracjach czasu rzeczywistego. Ich prace balansują między światem fizycznym a cyfrowym, wykorzystując światło, dźwięk i ruch. "
 + "Wśród słynnych realizacji znalazły się m.in. instalacje sceniczne dla Childish Gambino i zespołu Juliana Casablancasa - The Voidz, projekty FLUX, ENTER, LOTUS oraz teledysk Symphony in Acid dla Maxa Coopera.",
   },
@@ -94,14 +94,14 @@ export const artists = [
   },
   {
     id: "lins",
-    name: "Projekt specjalny Kasia Lins i Piotr Chęcki",
+    name: "PROJEKT SPECJALNY\nKasia Lins i Piotr Chęcki",
     specialty: "MUZYKA",
     image: "/artists_images/Kasia_Lins.jpg",
     mask: "/artists_masks/artist_mask1.svg",
     description: "Kasia Lins - wokalistka, pianistka i autorka tekstów, której twórczość łączy alternatywny pop z elementami rocka i soulu. Znana z magnetyzującego głosu i pełnych emocji koncertów, Lins zdobyła uznanie ostatnim albumem „Omen”, w którym porusza tematy miłości, winy i przebaczenia. Jej muzyka to mieszanka melancholii i siły."
 
-+ "/n" + "Piotr Chęcki - Saksofonista, kompozytor oraz producent. Znany z gry w Nene Heroine, Wojtek Mazolewski Quintet, Pink Freud, HÉR, Hatti Vatti, i wielu wielu innych. Brzmienie jego saksofonu stało się charakterystycznym elementem w wymienionych projektach. Artysta nie boi się przekraczać granic, wręcz je zaciera. W 2025 r. debiutuje jako solista - „PE” to jego pierwszy własny album, na który składają się akustyczno-elektroniczne kompozycje."
++ "\nPiotr Chęcki - Saksofonista, kompozytor oraz producent. Znany z gry w Nene Heroine, Wojtek Mazolewski Quintet, Pink Freud, HÉR, Hatti Vatti, i wielu wielu innych. Brzmienie jego saksofonu stało się charakterystycznym elementem w wymienionych projektach. Artysta nie boi się przekraczać granic, wręcz je zaciera. W 2025 r. debiutuje jako solista - „PE” to jego pierwszy własny album, na który składają się akustyczno-elektroniczne kompozycje."
 
-+ "/n" + "W tym elektryzującym połączeniu istnieje ogromny ładunek intymności i subtelności. Artyści zabiorą nas w minimalistyczną podróż po płycie „Omen” (Piotr również brał udział w sesji nagraniowej albumu) i twórczości artystki na dwa instrumenty: pianina i saksofonu, wsparte głosem Kasi. Szykujcie się na występ pełen skrajnych emocji.",
++ "\nW tym elektryzującym połączeniu istnieje ogromny ładunek intymności i subtelności. Artyści zabiorą nas w minimalistyczną podróż po płycie „Omen” (Piotr również brał udział w sesji nagraniowej albumu) i twórczości artystki na dwa instrumenty: pianina i saksofonu, wsparte głosem Kasi. Szykujcie się na występ pełen skrajnych emocji.",
   },
 ];
