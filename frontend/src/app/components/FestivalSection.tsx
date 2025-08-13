@@ -31,19 +31,15 @@ export default function FestivalSection({
         window.dispatchEvent(event);
       }
     };
-
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-
     let ctx: gsap.Context;
-
     const handleRestart = () => {
       if (ctx) ctx.revert();
-
       ctx = gsap.context(() => {
         gsap.set(festivalRef.current, { y: 0, opacity: 1 });
         gsap.set(textsRef.current, { opacity: 0, y: 20 });
@@ -60,9 +56,7 @@ export default function FestivalSection({
           y: "-50%",
         });
         gsap.set(finalTextRef.current, { opacity: 0, x: "-50%", y: "-50%" });
-
         const tl = gsap.timeline();
-
         tl.to(
           festivalRef.current,
           {
@@ -102,10 +96,8 @@ export default function FestivalSection({
           );
       }, containerRef);
     };
-
     handleRestart();
     window.addEventListener("restartFestivalAnimation", handleRestart);
-
     return () => {
       window.removeEventListener("restartFestivalAnimation", handleRestart);
       if (ctx) ctx.revert();
@@ -114,39 +106,37 @@ export default function FestivalSection({
   }, []);
 
   return (
-    <section id="festiwal" className="w-full min-h-screen relative z-5">
+    <section id="festiwal" className="w-full min-h-screen relative z-40">
       <div
         ref={containerRef}
         className={`w-full min-h-screen ${
           animationFinished
-            ? "relative pointer-events-auto"
+            ? "relative pointer-events-auto z-40"
             : "fixed top-0 left-0 z-50 pointer-events-none"
         }`}
       >
         <h2
           ref={festivalRef}
-          className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[10rem] text-light_blue"
+          className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[clamp(3rem,10vw,10rem)] text-light_blue opacity-100"
         >
           FESTIWAL
         </h2>
-
         <div className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center space-y-8">
           {TEXTS.map((text, index) => (
             <div
               key={text}
-              ref={(el: HTMLDivElement | null) => {
+              ref={(el) => {
                 textsRef.current[index] = el;
               }}
-              className="text-[2.5rem] text-yellow"
+              className="text-[clamp(1.2rem,4vw,2.5rem)] text-yellow opacity-0 translate-y-5"
             >
               {text}
             </div>
           ))}
         </div>
-
         <div
           ref={yellowFrameRef}
-          className="absolute top-1/2 left-1/2 w-full h-full"
+          className="absolute top-1/2 left-1/2 w-full h-full opacity-0"
         >
           <img
             src="/frame_yellow.svg"
@@ -154,10 +144,9 @@ export default function FestivalSection({
             className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto max-w-[90vw]"
           />
         </div>
-
         <div
           ref={redFrameRef}
-          className="absolute top-1/2 left-1/2 w-full h-full"
+          className="absolute top-1/2 left-1/2 w-full h-full opacity-0"
         >
           <img
             src="/frame_red.svg"
@@ -165,10 +154,9 @@ export default function FestivalSection({
             className="absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto max-w-[90vw]"
           />
         </div>
-
         <div
           ref={finalTextRef}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-red text-[7rem] leading-[0.9] opacity-0 text-center z-50 transform-none"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-red text-[clamp(2rem,8vw,7rem)] leading-[0.9] opacity-0 text-center z-50 transform-none"
         >
           JEDNO <br /> KLIMATYCZNE <br /> POŁĄCZENIE
         </div>

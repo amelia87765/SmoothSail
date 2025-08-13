@@ -19,12 +19,13 @@ const optima = localFont({
 export default function Page() {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [showFestival, setShowFestival] = useState(false);
-  const [festivalAnimationFinished, setFestivalAnimationFinished] = useState(false);
+  const [festivalAnimationFinished, setFestivalAnimationFinished] =
+    useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoadingComplete(true);
-    }, 2000);
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
 

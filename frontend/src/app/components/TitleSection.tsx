@@ -17,23 +17,41 @@ export default function TitleSection({
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.set(
+        [
+          titleRef.current,
+          subtitleRef.current,
+          frameRef.current,
+          bgRef.current,
+        ],
+        { opacity: 0, visibility: "visible" }
+      );
+
       gsap.set(titleRef.current, {
         y: 0,
-        opacity: 0,
         filter: "blur(20px)",
-      });
-      gsap.set(subtitleRef.current, {
-        opacity: 0,
-        y: 50,
-      });
-      gsap.set(frameRef.current, {
-        scale: 1.6,
-        opacity: 0,
+        top: "35vh",
       });
 
-      const tl = gsap.timeline({
-        defaults: { ease: "power3.inOut" },
+      gsap.set(subtitleRef.current, {
+        y: 50,
+        top: "calc(35vh + clamp(6rem,12vw,14rem) + 2rem)",
       });
+
+      gsap.set(frameRef.current, {
+        scale: 1.6,
+        xPercent: -50,
+        yPercent: -50,
+        top: "50%",
+        left: "50%",
+      });
+
+      gsap.set(bgRef.current, {
+        opacity: 1,
+        filter: "blur(0px)",
+      });
+
+      const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
 
       tl.to(titleRef.current, {
         opacity: 1,
@@ -72,25 +90,35 @@ export default function TitleSection({
           },
           "-=2.0"
         )
+        .to({}, { duration: 3 })
         .to(
-          {},
+          frameRef.current,
           {
-            duration: 3,
-          }
+            scale: 1.8,
+            duration: 1.5,
+            ease: "power2.in",
+          },
+          "exit"
         )
         .to(
-          [
-            titleRef.current,
-            subtitleRef.current,
-            frameRef.current,
-            bgRef.current,
-          ],
+          bgRef.current,
+          {
+            opacity: 0,
+            filter: "blur(20px)",
+            duration: 1.5,
+            ease: "power2.in",
+          },
+          "exit"
+        )
+        .to(
+          [titleRef.current, subtitleRef.current],
           {
             y: "-100vh",
             opacity: 0,
             duration: 2,
             ease: "power2.in",
-          }
+          },
+          "exit"
         )
         .eventCallback("onComplete", onAnimationComplete);
     }, containerRef);
@@ -102,27 +130,27 @@ export default function TitleSection({
     <div ref={containerRef}>
       <div
         ref={bgRef}
-        className="fixed inset-0 z-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red"
+        className="fixed inset-0 z-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red opacity-0"
       />
-
       <div
         ref={titleRef}
-        className="fixed left-1/2 z-30 text-[14rem] leading-[0.9] text-red text-center pointer-events-none -translate-x-1/2"
+        className="fixed left-1/2 z-30 text-[clamp(3rem,10vw,14rem)] leading-[0.9] text-red text-center pointer-events-none -translate-x-1/2 opacity-0"
         style={{
           top: "35vh",
           transform: "translate(-50%, -50%)",
+          willChange: "transform, opacity, filter",
         }}
       >
         STREFY
         <br />
         CZASOWE
       </div>
-
       <div
         ref={subtitleRef}
-        className="fixed left-1/2 z-30 text-center pointer-events-none text-light_blue text-[3rem] leading-[1.2] -translate-x-1/2"
+        className="fixed left-1/2 z-30 text-center pointer-events-none text-light_blue text-[clamp(1.5rem,4vw,3rem)] leading-[1.2] -translate-x-1/2 opacity-0"
         style={{
-          top: "calc(35vh + 14rem + 2rem)",
+          top: "calc(35vh + clamp(6rem,12vw,14rem) + 2rem)",
+          willChange: "transform, opacity",
         }}
       >
         Indoorowy festiwal w Trojmiescie
@@ -131,14 +159,14 @@ export default function TitleSection({
         <br />
         zmiany czasu na zimowy.
       </div>
-
       <img
         ref={frameRef}
         src="/frame_blue.svg"
         alt="Frame"
-        className="fixed top-1/2 left-1/2 z-20 h-auto pointer-events-none"
+        className="fixed top-1/2 left-1/2 z-20 h-auto pointer-events-none opacity-0"
         style={{
           transform: "translate(-50%, -50%)",
+          willChange: "transform, opacity, filter",
         }}
       />
     </div>
