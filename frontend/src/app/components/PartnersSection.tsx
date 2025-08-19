@@ -44,18 +44,25 @@ export default function Partnerzy() {
 
   return (
     <section className="h-[200vh] bg-gradient-to-b from-black via-partners_bg to-black w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-8 md:gap-10 z-5 relative overflow-x-hidden">
-      <h2 className="z-20 text-9xl sm:text-10xl md:text-12xl text-center text-white">
-        PARTNERZY
-      </h2>
-      <p className="z-20 text-lg md:text-xl text-center text-light_blue max-w-2xl">
-        Dolacz do nas i stworz wlasna strefe
-      </p>
+      <div className="z-20 text-center mb-0">
+        <h2 className="text-[clamp(3rem,8vw,9rem)] text-light_blue mb-0 leading-tight">
+          PARTNERZY
+        </h2>
+        <p
+          style={{ fontFamily: "gil-sans-nova, sans-serif" }}
+          className="text-[clamp(1rem,2vw,2rem)] text-light_blue "
+        >
+          Dołącz do nas i stwórz własną strefę
+        </p>
+      </div>
 
       <div className="w-full max-w-5xl flex flex-col gap-2 z-20 px-2 sm:px-4">
         {accordionData.map((item, index) => {
           const isOpen = openIndex === index;
           const ry = isOpen ? 120 : 60;
-          const minHeight = isOpen ? "16rem" : "8rem";
+          const minHeight = isOpen
+            ? "clamp(12rem, 20vw, 20rem)"
+            : "clamp(4rem, 10vw, 8rem)";
           return (
             <div
               key={index}
@@ -90,7 +97,7 @@ export default function Partnerzy() {
                 </svg>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-12 lg:px-16">
-                  <h3 className="text-[3rem] text-blue font-semibold">
+                  <h3 className="text-[clamp(2rem,3vi,3rem)] text-blue font-semibold">
                     {item.question}
                   </h3>
                   <div
@@ -98,7 +105,7 @@ export default function Partnerzy() {
                       isOpen ? "max-h-96 mt-4 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="space-y-2 text-base sm:text-lg md:text-xl text-gray">
+                    <div className="space-y-2 text-[clamp(1rem,1.5vi,1.25rem)] text-gray">
                       {item.answer.map((a, i) => (
                         <p key={i}>{a}</p>
                       ))}
