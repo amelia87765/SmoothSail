@@ -4,7 +4,7 @@ export const artists = [
     name: "Piotr Kaliński (Hatti Vatti)",
     specialty: "MUZYKA",
     image: "/artists_images/Hatti_Vatti.jpg",
-    mask: "/artists_masks/artist_mask1.svg",
+    mask: "/artists_masks/artist_mask2.svg",
     description: "Piotr Kaliński, kompozytor i producent znany z projektów takich jak Hinode Tapes, Hatti Vatti czy Nanook of the North. Artysta zaprezentuje nowe ambientowe znaleziska płytowe, które przywiózł z licznych podróży po świecie."
 
   },
@@ -13,7 +13,7 @@ export const artists = [
     name: "innerinnerlife (KAMP!)",
     specialty: "MUZYKA",
     image: "/artists_images/innerinnerlife.png",
-    mask: "/artists_masks/artist_mask2.svg",
+    mask: "/artists_masks/artist_mask1.svg",
     description: "Tomasz Szpaderski - wokalista i współzałożyciel zespołu KAMP! - jednej z najbardziej wpływowych formacji polskiej elektroniki. W trio pełnił rolę lidera wokalnego, odpowiadał za głos i aranżacje klawiszowe. Grupa zakończyła działalność w 2023 roku, a artysta podróżuje ze swoim solowym projektem ambientowym innerinnerlife po Europie.",
   },
   {
