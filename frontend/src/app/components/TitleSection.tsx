@@ -26,18 +26,13 @@ export default function TitleSection({
         ],
         { opacity: 0, visibility: "visible" }
       );
-
       gsap.set(titleRef.current, {
         y: 0,
         filter: "blur(20px)",
-        top: "35vh",
       });
-
       gsap.set(subtitleRef.current, {
         y: 50,
-        top: "calc(35vh + clamp(6rem,12vw,14rem) + 2rem)",
       });
-
       gsap.set(frameRef.current, {
         scale: 1.6,
         xPercent: -50,
@@ -45,59 +40,23 @@ export default function TitleSection({
         top: "50%",
         left: "50%",
       });
-
       gsap.set(bgRef.current, {
         opacity: 1,
         filter: "blur(0px)",
       });
-
       const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
-
       tl.to(titleRef.current, {
         opacity: 1,
         duration: 2.5,
       })
-        .to(
-          frameRef.current,
-          {
-            opacity: 1,
-            duration: 2,
-          },
-          "-=2.0"
-        )
-        .to(
-          titleRef.current,
-          {
-            filter: "blur(0px)",
-            duration: 3,
-          },
-          "-=1.5"
-        )
-        .to(
-          frameRef.current,
-          {
-            scale: 1,
-            duration: 3,
-          },
-          "-=2.5"
-        )
-        .to(
-          subtitleRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2,
-          },
-          "-=2.0"
-        )
+        .to(frameRef.current, { opacity: 1, duration: 2 }, "-=2.0")
+        .to(titleRef.current, { filter: "blur(0px)", duration: 3 }, "-=1.5")
+        .to(frameRef.current, { scale: 1, duration: 3 }, "-=2.5")
+        .to(subtitleRef.current, { opacity: 1, y: 0, duration: 2 }, "-=2.0")
         .to({}, { duration: 3 })
         .to(
           frameRef.current,
-          {
-            scale: 1.8,
-            duration: 1.5,
-            ease: "power2.in",
-          },
+          { scale: 2.8, duration: 2.5, ease: "power2.in" },
           "exit"
         )
         .to(
@@ -112,33 +71,29 @@ export default function TitleSection({
         )
         .to(
           [titleRef.current, subtitleRef.current],
-          {
-            y: "-100vh",
-            opacity: 0,
-            duration: 2,
-            ease: "power2.in",
-          },
+          { y: "-100vh", opacity: 0, duration: 2, ease: "power2.in" },
           "exit"
         )
         .eventCallback("onComplete", onAnimationComplete);
     }, containerRef);
-
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="flex flex-col items-center justify-center h-screen relative"
+    >
       <div
         ref={bgRef}
         className="fixed inset-0 z-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red opacity-0"
       />
       <div
         ref={titleRef}
-        className="fixed left-1/2 z-30 text-[clamp(3rem,10vw,14rem)] leading-[0.9] text-red text-center pointer-events-none -translate-x-1/2 opacity-0"
+        className="z-30 text-[clamp(8rem,15vw,20rem)] leading-[0.9] text-red text-center pointer-events-none opacity-0"
         style={{
-          top: "35vh",
-          transform: "translate(-50%, -50%)",
           willChange: "transform, opacity, filter",
+          textShadow: "0 0 10px rgba(255,0,0,0.1), 0 0 40px rgba(255,0,0,0.1)",
         }}
       >
         STREFY
@@ -147,9 +102,8 @@ export default function TitleSection({
       </div>
       <div
         ref={subtitleRef}
-        className="fixed left-1/2 z-30 text-center pointer-events-none text-light_blue text-[clamp(1.5rem,4vw,3rem)] leading-[1.2] -translate-x-1/2 opacity-0"
+        className="mt-5 z-30 text-center pointer-events-none text-light_blue text-[clamp(1.5rem,4vw,3rem)] leading-[1.2] opacity-0"
         style={{
-          top: "calc(35vh + clamp(6rem,12vw,14rem) + 2rem)",
           willChange: "transform, opacity",
         }}
       >
