@@ -9,6 +9,8 @@ import MovieSection from "../components/MovieSection";
 import FloatingTextSection from "../components/FloatingTextSection";
 import PartnersSection from "../components/PartnersSection";
 import EditionsSection from "../components/EditionsSection";
+import Footer from "../components/Footer";
+import EditionSection from "../components/EditionSection";
 
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
@@ -25,7 +27,7 @@ export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoadingComplete(true);
-    }, 4000);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -53,25 +55,23 @@ export default function Page() {
       )}
 
       {loadingComplete && (
-        <TitleSection
-          onAnimationComplete={() => {
-            setTimeout(() => setShowFestival(true), 2000);
-          }}
-        />
-      )}
-
-      {showFestival && (
-        <section id="festiwal">
-          <FestivalSection
-            onAnimationFinish={() => setFestivalAnimationFinished(true)}
+        <section id="intro" className="relative w-full min-h-screen">
+          <TitleSection
+            onAnimationComplete={() => {
+              setTimeout(() => setShowFestival(true), 2000);
+            }}
           />
-        </section>
-      )}
 
-      {loadingComplete && (
-        <div className="fixed left-1/2 transform -translate-x-1/2 z-40 opacity-100 top-[70vh]">
-          <CountdownTimer />
-        </div>
+          {showFestival && (
+            <FestivalSection
+              onAnimationFinish={() => setFestivalAnimationFinished(true)}
+            />
+          )}
+
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40">
+            <CountdownTimer />
+          </div>
+        </section>
       )}
 
       {festivalAnimationFinished && (
@@ -83,11 +83,12 @@ export default function Page() {
             <FloatingTextSection />
           </section>
           <section id="editions" className="min-h-screen w-full">
-            <EditionsSection />
+            <EditionSection />
           </section>
           <section id="partners" className="min-h-screen w-full">
             <PartnersSection />
           </section>
+          <Footer />
         </>
       )}
     </div>
