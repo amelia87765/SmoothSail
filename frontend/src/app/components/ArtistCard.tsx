@@ -7,7 +7,7 @@ export default function ArtistCard({
 }) {
   return (
     <div
-      className="w-full h-[clamp(40svh,50dvh,60lvh)] bg-artist_bg cursor-pointer overflow-hidden relative flex flex-col rounded-2xl"
+      className="h-[clamp(40svh,50dvh,60lvh)] aspect[4/3] bg-artist_bg cursor-pointer overflow-hidden relative flex flex-col rounded-2xl"
       onClick={onClick}
     >
       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl">
