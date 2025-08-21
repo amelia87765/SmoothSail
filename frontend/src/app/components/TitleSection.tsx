@@ -4,10 +4,12 @@ import gsap from "gsap";
 
 type TitleSectionProps = {
   onAnimationComplete: () => void;
+  showCountDown: () => void;
 };
 
 export default function TitleSection({
   onAnimationComplete,
+  showCountDown,
 }: TitleSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -53,6 +55,7 @@ export default function TitleSection({
         .to(titleRef.current, { filter: "blur(0px)", duration: 3 }, "-=1.5")
         .to(frameRef.current, { scale: 1, duration: 3 }, "-=2.5")
         .to(subtitleRef.current, { opacity: 1, y: 0, duration: 2 }, "-=2.0")
+        .call(showCountDown)
         .to({}, { duration: 3 })
         .to(
           frameRef.current,
