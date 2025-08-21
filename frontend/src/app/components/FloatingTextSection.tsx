@@ -21,7 +21,7 @@ export default function FloatingWordsSection() {
           updated[index] = !updated[index];
           return updated;
         });
-      }, 4000 + index * 1500)
+      }, 2000 + index * 1500)
     );
 
     return () => intervals.forEach(clearInterval);
