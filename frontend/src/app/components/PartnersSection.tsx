@@ -56,7 +56,7 @@ export default function Partnerzy() {
         </p>
       </div>
 
-      <div className="w-full max-w-5xl flex flex-col gap-2 z-20 px-2 sm:px-4">
+      <div className="w-full max-w-5xl flex flex-col gap-0 z-20 px-2 sm:px-4">
         {accordionData.map((item, index) => {
           const isOpen = openIndex === index;
           const ry = isOpen ? 120 : 60;
@@ -68,6 +68,10 @@ export default function Partnerzy() {
               key={index}
               onClick={() => toggle(index)}
               className="cursor-pointer w-full"
+              style={{
+                marginTop: index > 0 ? "-4rem" : "-1rem",
+                transition: "margin-top 0.5s ease-in-out",
+              }}
             >
               <div
                 className="relative w-full transition-all duration-500 ease-in-out"
