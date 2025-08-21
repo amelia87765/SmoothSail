@@ -11,6 +11,7 @@ import PartnersSection from "../components/PartnersSection";
 import EditionsSection from "../components/EditionsSection";
 import Footer from "../components/Footer";
 import EditionSection from "../components/EditionSection";
+import HeaderLogo from "../components/HeaderLogo";
 
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
@@ -23,13 +24,7 @@ export default function Page() {
   const [showFestival, setShowFestival] = useState(false);
   const [festivalAnimationFinished, setFestivalAnimationFinished] =
     useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoadingComplete(true);
-    }, 6000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [showCountDown, setShowCountdown] = useState(false);
 
   return (
     <div className={`relative w-screen overflow-x-hidden ${optima.className}`}>
@@ -54,23 +49,28 @@ export default function Page() {
         </div>
       )}
 
+      {loadingComplete && <HeaderLogo />}
+
       {loadingComplete && (
-        <section id="intro" className="relative w-full min-h-screen">
+        <section id="home" className="relative w-full min-h-screen">
           <TitleSection
             onAnimationComplete={() => {
               setTimeout(() => setShowFestival(true), 2000);
             }}
+            showCountDown={() => setShowCountdown(true)}
           />
+
+          {showCountDown && (
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40">
+              <CountdownTimer />
+            </div>
+          )}
 
           {showFestival && (
             <FestivalSection
               onAnimationFinish={() => setFestivalAnimationFinished(true)}
             />
           )}
-
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40">
-            <CountdownTimer />
-          </div>
         </section>
       )}
 
