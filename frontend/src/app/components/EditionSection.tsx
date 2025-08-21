@@ -24,7 +24,7 @@ export default function EditionsSection() {
       logo: "/logo_strefy.svg",
       colorYear: "text-red",
       colorLabel: "text-blue",
-      artists: artists.slice(7, 10),
+      artists: artists.slice(7, 11),
     },
     {
       id: "2026_-1",
@@ -33,7 +33,7 @@ export default function EditionsSection() {
       logo: "/logo_strefy.svg",
       colorYear: "text-red",
       colorLabel: "text-blue",
-      artists: artists.slice(10, 11),
+      artists: artists.slice(11, 12),
     },
   ];
 
@@ -43,11 +43,24 @@ export default function EditionsSection() {
         EDYCJE
       </h1>
       <div className="mt-[clamp(18rem,45vh,32rem)] flex flex-col gap-[clamp(8rem,12vh,10rem)]">
-        {editions.map((edition) => {
+        {editions.map((edition, idx) => {
           const groupedArtists = [];
           for (let i = 0; i < edition.artists.length; i += 2) {
             groupedArtists.push([edition.artists[i], edition.artists[i + 1]]);
           }
+
+          const dateLabel =
+            idx === 1 ? (
+              <>
+                <span>Koniec marca,</span>
+                <span>zmiana czasu na letni</span>
+              </>
+            ) : (
+              <>
+                <span>Koniec października,</span>
+                <span>zmiana czasu na zimowy</span>
+              </>
+            );
 
           return (
             <div key={edition.id} className="relative">
@@ -62,8 +75,7 @@ export default function EditionsSection() {
                   <div
                     className={`${edition.colorLabel} text-[clamp(1rem,2.5vw,2.5rem)] flex flex-col justify-center leading-tight pt-[0.25rem]`}
                   >
-                    <span>Koniec października,</span>
-                    <span>zmiana czasu na zimowy</span>
+                    {dateLabel}
                   </div>
                 </div>
 
@@ -71,6 +83,9 @@ export default function EditionsSection() {
                   src={edition.logo}
                   alt="logo"
                   className="w-[clamp(6rem,12vw,10rem)] h-[clamp(6rem,12vw,8rem)] relative z-30"
+                  style={{
+                    marginTop: "-4rem",
+                  }}
                 />
               </div>
 
