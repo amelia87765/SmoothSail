@@ -1,3 +1,5 @@
+import { desc } from "framer-motion/client";
+
 export const artists = [
   {
     id: "hatti",
@@ -34,7 +36,8 @@ export const artists = [
   },
   {
     id: "siekirka",
-    name: "Siekirka x Shaiba (koncert premierowy)",
+    name: "Siekirka x Shaiba",
+    subtitle: "KONCERT PREMIEROWY",
     specialty: "MUZYKA",
     image: "/artists_images/Milena_Glowacka.png",
     mask: "/artists_masks/artist_mask1.svg",
@@ -94,7 +97,8 @@ export const artists = [
   },
   {
     id: "lins",
-    name: "PROJEKT SPECJALNY\nKasia Lins i Piotr Chęcki",
+    name: "Kasia Lins i Piotr Chęcki",
+    subtitle : "PROJEKT SPECJALNY",
     specialty: "MUZYKA",
     image: "/artists_images/Kasia_Lins.jpg",
     mask: "/artists_masks/artist_mask1.svg",
