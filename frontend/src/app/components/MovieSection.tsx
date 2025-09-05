@@ -2,7 +2,7 @@
 
 export default function MovieSection() {
   return (
-    <section className="h-[100vh] w-full relative z-30 overflow-hidden overflow-x-hidden">
+    <section className="relative w-full h-screen z-30 overflow-hidden">
       <div className="absolute inset-0 bg-black">
         <img
           src="/svera.png"
@@ -10,11 +10,13 @@ export default function MovieSection() {
           className="w-full h-full object-cover"
         />
       </div>
-      <img
-        src="/video_mask.svg"
-        alt="Mask"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-      />
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="/video_mask.svg"
+          alt="Mask"
+          className="w-full h-full object-cover pointer-events-none"
+        />
+      </div>
     </section>
   );
 }

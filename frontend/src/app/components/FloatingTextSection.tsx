@@ -32,7 +32,7 @@ export default function FloatingWordsSection() {
       {words.map((word, index) => (
         <span
           key={index}
-          className={`absolute z-30 text-6xl transition-all duration-[1500ms] ease-in-out ${
+          className={`absolute z-30 text-[clamp(1.5rem,5vw,4.5rem)] transition-all duration-[1500ms] ease-in-out ${
             blurStates[index] ? "blur-sm" : "blur-none"
           }`}
           style={{ top: word.top, left: word.left }}

@@ -43,20 +43,23 @@ export default function Partnerzy() {
   };
 
   return (
-    <section className="h-[200vh] bg-gradient-to-b from-black via-partners_bg to-black w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-8 md:gap-10 z-5 relative overflow-x-hidden">
+    <section className="min-h-screen bg-gradient-to-b from-black via-partners_bg to-[#231F20] w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-8 md:gap-10 z-5 relative overflow-x-hidden">
       <div className="z-20 text-center mb-0">
         <h2 className="text-[clamp(3rem,8vw,9rem)] text-light_blue mb-0 leading-tight">
           PARTNERZY
         </h2>
         <p
-          style={{ fontFamily: "gil-sans-nova, sans-serif" }}
+          style={{
+            fontFamily: "gil-sans-nova, sans-serif",
+            marginTop: "-1.2rem",
+          }}
           className="text-[clamp(1rem,2vw,2rem)] text-light_blue "
         >
           Dołącz do nas i stwórz własną strefę
         </p>
       </div>
 
-      <div className="w-full max-w-5xl flex flex-col gap-0 z-20 px-2 sm:px-4">
+      <div className="w-full max-w-6xl flex flex-col gap-0 z-20 px-2 sm:px-4">
         {accordionData.map((item, index) => {
           const isOpen = openIndex === index;
           const ry = isOpen ? 120 : 60;
@@ -80,28 +83,37 @@ export default function Partnerzy() {
                 }}
               >
                 <svg
-                  viewBox="0 0 600 240"
+                  viewBox="0 0 900 240"
                   className="w-full h-full transition-all duration-500 ease-in-out"
                   preserveAspectRatio="xMidYMid meet"
                 >
                   <ellipse
-                    cx="300"
+                    cx="450"
                     cy="120"
-                    rx="280"
+                    rx="430"
                     ry={ry}
                     fill="url(#grad)"
                     className="transition-all duration-500"
                   />
                   <defs>
-                    <radialGradient id="grad" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0%" stopColor="#C3D0E1" />
-                      <stop offset="100%" stopColor="#9E9626" />
+                    <radialGradient
+                      id="grad"
+                      cx="50%"
+                      cy="50%"
+                      r="70%"
+                      fx="50%"
+                      fy="50%"
+                    >
+                      <stop offset="0%" stopColor="#E8EDF7" stopOpacity="1" />
+                      <stop offset="40%" stopColor="#C3D0E1" stopOpacity="1" />
+                      <stop offset="70%" stopColor="#9E9626" stopOpacity="1" />
+                      <stop offset="100%" stopColor="#7A7520" stopOpacity="1" />
                     </radialGradient>
                   </defs>
                 </svg>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-12 lg:px-16">
-                  <h3 className="text-[clamp(2rem,3vi,3rem)] text-blue font-semibold">
+                  <h3 className="text-[clamp(1.6rem,3.2vw,2.8rem)] text-blue font-semibold">
                     {item.question}
                   </h3>
                   <div
@@ -109,7 +121,7 @@ export default function Partnerzy() {
                       isOpen ? "max-h-96 mt-4 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="space-y-2 text-[clamp(1rem,1.5vi,1.25rem)] text-gray">
+                    <div className="space-y-2 text-[clamp(1rem,1.5vw,1.25rem)] text-gray-800">
                       {item.answer.map((a, i) => (
                         <p key={i}>{a}</p>
                       ))}

@@ -77,7 +77,18 @@ export default function TitleSection({
           { y: "-100vh", opacity: 0, duration: 2, ease: "power2.in" },
           "exit"
         )
-        .eventCallback("onComplete", onAnimationComplete);
+        .eventCallback("onComplete", () => {
+          if (containerRef.current) {
+            gsap.to(containerRef.current, {
+              height: 0,
+              duration: 0.2,
+              overflow: "hidden",
+              onComplete: onAnimationComplete,
+            });
+          } else {
+            onAnimationComplete();
+          }
+        });
     }, containerRef);
     return () => ctx.revert();
   }, []);

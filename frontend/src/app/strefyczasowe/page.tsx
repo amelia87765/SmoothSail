@@ -7,11 +7,13 @@ import CountdownTimer from "../components/CountdownTimer";
 import FestivalSection from "../components/FestivalSection";
 import MovieSection from "../components/MovieSection";
 import FloatingTextSection from "../components/FloatingTextSection";
-import PartnersSection from "../components/PartnersSection";
+import Partners4Section from "../components/PartnersSection";
 import EditionsSection from "../components/EditionsSection";
 import Footer from "../components/Footer";
 import EditionSection from "../components/EditionSection";
 import HeaderLogo from "../components/HeaderLogo";
+import FestivalSectionStatic from "../components/FestivalSectionStatic";
+import { usePreloadAssets } from "../hooks/usePreloadAssets";
 
 const optima = localFont({
   src: "../../../public/fonts/OPTIMA.ttf",
@@ -26,10 +28,19 @@ export default function Page() {
     useState(false);
   const [showCountDown, setShowCountdown] = useState(false);
 
-  return (
-    <div className={`relative w-screen overflow-x-hidden ${optima.className}`}>
-      <div className="fixed inset-0 bg-[#231F20] z-0"></div>
+  const assetsLoaded = usePreloadAssets([
+    "/fonts/OPTIMA.ttf",
+    "/frame_blue.svg",
+    "/frame_red.svg",
+    "/frame_yellow.svg",
+    "/strefy.svg",
+  ]);
 
+  return (
+    <div
+      className={`relative w-screen min-h-full overflow-x-hidden ${optima.className}`}
+    >
+      <div className="fixed inset-0 bg-[#231F20] z-0"></div>
       <div
         className="fixed inset-0 z-10 pointer-events-none opacity-25"
         style={{
@@ -42,40 +53,40 @@ export default function Page() {
         alt="Mask"
         className="fixed inset-0 z-10 w-full h-full object-cover object-top pointer-events-none"
       />
-
       {!loadingComplete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <LoaderLogo onFinish={() => setLoadingComplete(true)} />
         </div>
       )}
-
       {loadingComplete && <HeaderLogo />}
-
       {loadingComplete && (
-        <section id="home" className="relative w-full min-h-screen">
+        <>
           <TitleSection
             onAnimationComplete={() => {
-              setTimeout(() => setShowFestival(true), 2000);
+              setTimeout(() => setShowFestival(true), 500);
             }}
             showCountDown={() => setShowCountdown(true)}
           />
 
-          {showCountDown && (
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40">
-              <CountdownTimer />
-            </div>
-          )}
-
-          {showFestival && (
+          {showFestival && !festivalAnimationFinished && (
             <FestivalSection
               onAnimationFinish={() => setFestivalAnimationFinished(true)}
             />
           )}
-        </section>
+        </>
       )}
-
+      {showCountDown && !festivalAnimationFinished && (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[999]">
+          <CountdownTimer />
+        </div>
+      )}
       {festivalAnimationFinished && (
         <>
+          <FestivalSectionStatic>
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[999]">
+              <CountdownTimer />
+            </div>
+          </FestivalSectionStatic>
           <section id="movie" className="min-h-screen w-full">
             <MovieSection />
           </section>
@@ -86,7 +97,7 @@ export default function Page() {
             <EditionSection />
           </section>
           <section id="partners" className="min-h-screen w-full">
-            <PartnersSection />
+            <Partners4Section />
           </section>
           <Footer />
         </>
