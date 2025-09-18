@@ -43,11 +43,13 @@ export default function CountdownTimer({
   }, []);
 
   return (
-    <div className={`text-center z-50 text-light_blue mt-32 px-4 ${className}`}>
-      <p className="mb-2 text-base sm:text-xl md:text-2xl">
-        Do zmiany czasu na zimowy pozostało:
+    <div
+      className={`w-full max-w-none text-center z-50 text-light_blue mt-32 px-0 ${className}`}
+    >
+      <p className="text-[clamp(1rem,2vw,1.5rem)]">
+        Do zmiany czasu pozostało:
       </p>
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-4 text-sm sm:text-base md:text-xl tracking-widest">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-x-1 md:gap-x-5 text-[clamp(0.8rem,2vw,1.25rem)] whitespace-nowrap">
         <span>{timeLeft.days} dni</span>
         <span>{timeLeft.hours} godzin</span>
         <span>{timeLeft.minutes} minut</span>

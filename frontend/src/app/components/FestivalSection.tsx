@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const TEXTS = [
-  "DWIE STREFY",
-  "PIĘĆ UNIKALNYCH WYSTĘPOW",
-  "WYSTAWY PRZESTRZENNE",
-  "PROJEKTOWANIE ŚWIETLNE",
+  "DWIE SCENY",
+  "SIEDEM UNIKALNYCH WYSTĘPÓW",
+  "INSTALACJE PRZESTRZENNE",
+  "PIĘĆ STREF",
 ];
 
 interface FestivalSectionProps {
@@ -48,25 +48,34 @@ export default function FestivalSection({
         gsap.set(finalTextRef.current, { opacity: 0, x: "-50%", y: "-50%" });
 
         const tl = gsap.timeline();
-        tl.to(festivalRef.current, { y: "-30vh", duration: 3, delay: 2 }, ">")
-          .to(yellowFrameRef.current, { opacity: 1, duration: 2 }, "<")
-          .to(textsRef.current[0], { opacity: 1, y: 0, duration: 2 }, "<")
-          .to(yellowFrameRef.current, { scale: 1.6, duration: 3 }, "<")
-          .to(festivalRef.current, { y: "-100vh", opacity: 0, duration: 3 })
+        tl.to(
+          festivalRef.current,
+          { y: "-30vh", duration: 2, delay: 0.69 },
+          ">"
+        )
+          .to(yellowFrameRef.current, { opacity: 1, duration: 1.5 }, "<")
+          .to(textsRef.current[0], { opacity: 1, y: 0, duration: 1.5 }, "<")
+          .to(yellowFrameRef.current, { scale: 1.6, duration: 2 }, "<")
+          .to(festivalRef.current, {
+            y: "-100vh",
+            opacity: 0,
+            duration: 2,
+            delay: 0.5,
+          })
           .to(textsRef.current[1], { opacity: 1, y: 0, duration: 2 }, "<")
-          .to(yellowFrameRef.current, { scale: 1.4, duration: 3 }, "<")
-          .to(textsRef.current[2], { opacity: 1, y: 0, duration: 2 })
-          .to(yellowFrameRef.current, { scale: 1.2, duration: 3 }, "<")
-          .to(textsRef.current[3], { opacity: 1, y: 0, duration: 2 })
-          .to(yellowFrameRef.current, { scale: 1, duration: 3 }, "<")
+          .to(yellowFrameRef.current, { scale: 1.4, duration: 2 }, "<")
+          .to(textsRef.current[2], { opacity: 1, y: 0, duration: 1.5 })
+          .to(yellowFrameRef.current, { scale: 1.2, duration: 2 }, "<")
+          .to(textsRef.current[3], { opacity: 1, y: 0, duration: 1.5 })
+          .to(yellowFrameRef.current, { scale: 1, duration: 2 }, "<")
           .to(textsRef.current, {
             color: "#C3D0E1",
             filter: "blur(10px)",
-            duration: 4,
+            duration: 2,
           })
-          .to(yellowFrameRef.current, { opacity: 0, duration: 4 }, "<")
-          .to(redFrameRef.current, { opacity: 1, duration: 4 }, "<")
-          .to(finalTextRef.current, { opacity: 1, duration: 3 })
+          .to(yellowFrameRef.current, { opacity: 0, duration: 2 }, "<")
+          .to(redFrameRef.current, { opacity: 1, duration: 1.5 }, "<")
+          .to(finalTextRef.current, { opacity: 1, duration: 1 })
           .to(
             {},
             {
@@ -108,14 +117,14 @@ export default function FestivalSection({
           FESTIWAL
         </h2>
 
-        <div className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center space-y-8">
+        <div className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center space-y-1 md:space-y-8">
           {TEXTS.map((text, index) => (
             <div
               key={text}
               ref={(el) => {
                 textsRef.current[index] = el;
               }}
-              className="text-[clamp(1.2rem,4vw,2.5rem)] text-yellow opacity-0 translate-y-5"
+              className="text-[clamp(0.7rem,4vw,2.5rem)] text-yellow opacity-0 translate-y-5"
             >
               {text}
             </div>
@@ -148,7 +157,7 @@ export default function FestivalSection({
           ref={finalTextRef}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-red text-[clamp(2rem,8vw,7rem)] leading-[0.9] opacity-0 text-center z-50 transform-none"
         >
-          JEDNO <br /> KLIMATYCZNE <br /> POŁĄCZENIE
+          JEDNO <br /> NARRACYJNE <br /> POŁĄCZENIE
         </div>
       </div>
     </section>

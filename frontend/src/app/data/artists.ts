@@ -1,5 +1,3 @@
-import { desc } from "framer-motion/client";
-
 export const artists = [
   {
     id: "hatti",
@@ -7,16 +5,17 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/Hatti_Vatti.jpg",
     mask: "/artists_masks/artist_mask3.svg",
-    description: "Piotr Kaliński, kompozytor i producent znany z projektów takich jak Hinode Tapes, Hatti Vatti czy Nanook of the North. Artysta zaprezentuje nowe ambientowe znaleziska płytowe, które przywiózł z licznych podróży po świecie."
-
-  },
+    description: "Producent i kompozytor znany z projektów Hatti Vatti czy Hinode Tapes. Na wydarzeniu zaserwuje **nowe**, ambientowe znaleziska winylowe z licznych podróży po świecie, przenosząc nas w inną czasoprzestrzeń. Dosłownie!"
+      },
   {
     id: "inner",
     name: "innerinnerlife (KAMP!)",
+    subtitle: "KONCERT PREMIEROWY",
     specialty: "MUZYKA",
     image: "/artists_images/innerinnerlife.png",
     mask: "/artists_masks/artist_mask5.svg",
-    description: "Tomasz Szpaderski - wokalista i współzałożyciel zespołu KAMP! - jednej z najbardziej wpływowych formacji polskiej elektroniki. W trio pełnił rolę lidera wokalnego, odpowiadał za głos i aranżacje klawiszowe. Grupa zakończyła działalność w 2023 roku, a artysta podróżuje ze swoim solowym projektem ambientowym innerinnerlife po Europie.",
+    description:  "Tomasz Szpaderski - wokalista zespołu KAMP! - jednej z najbardziej wpływowych formacji polskiej elektroniki. Artysta podróżuje ze swoim solowym projektem ambientowym innerinnerlife po Europie, mamy zaszczyt ogłosić, że na Strefach Czasowych **zagra przedpremierowo** swój nadchodzący album.\n" 
++"\nJakby tego było mało - w trakcie tego headline'owego występu nie zabraknie niespodzianek. To tyle na teraz. Bez odbioru!"
   },
   {
     id: "moriko",
@@ -24,7 +23,9 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/Josephine_Moriko.jpg",
     mask: "/artists_masks/artist_mask3.svg",
-    description: "Josephine Moriko jest producentką, DJ-ką i artystką wizualną ze Sztokholmu w Szwecji. W 2020 roku Moriko zaczęła publikować miksy w internetowych stacjach radiowych, takich jak HKCR, C-, odyXxey i NTS Radio. Od 2022 roku aktywnie działa jako DJ-ka w Sztokholmie, a w 2023 roku wystąpiła m.in. na Boiler Room: Stockholm.",
+    description: "Producentka i artystka wizualna ze Sztokholmu. "
+    +"Mówią, że swoim efemerycznym głosem koi dusze, a w fuzji z muzyką, zmiękcza wszystkie ciemne, zastygłe na przestrzeni czasu serca. "
+    +"Od kilku lat aktywnie gra w Szwecji także jako DJ-ka, wystąpiła m.in. na _Boiler Room: Stockholm_. Będzie to jej **pierwszy występ** w Polsce."
   },
    {
     id: "emerai",
@@ -32,32 +33,45 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/Emerai.jpg",
     mask: "/artists_masks/artist_mask5.svg",
-    description: "Wywodząca się z trójmiejskiej sceny DJ-ka, która swoją selekcją muzyczną zmusza do refleksji, a chwilę później eksploduje nieskrępowaną energią. W jej setach gęsta mieszanka emocji spotyka się z ciężarem industrialnego brzmienia i momentami ulgi, które tworzą niezapomnianą podróż. Jej podcasty trafiły do katalogów Unusual Records i Black Line Recordings. W eklektycznych setach emerai głębokie, psychodeliczne techno przenika się z IDM, deconstructed club, elektro czy frywolnym housem - zawsze prowadząc słuchaczy w nieoczywiste, pełne napięcia i ulgi zakątki muzyki elektronicznej.",
-  },
+    description: "Mieszka we Włoszech i mimo braku różnicy czasu, zagra na wydarzeniu, przenosząc nas w odległe rewiry. Wywodząca się z trójmiejskiej sceny DJ-ka, która swoją selekcją muzyczną zmusza do refleksji, aby chwilę później eksplodować nieskrępowaną energią. W jej setach gęsta mieszanka emocji spotyka się z ciężarem industrialnego brzmienia i momentami ulgi, które tworzą niezapomnianą podróż. "
+    +"\nZagrała na ostatnim z koncertów cyklu _SUNSETY by SmoothSail 2024_."
+   },
   {
     id: "siekirka",
-    name: "Siekirka x Shaiba",
-    subtitle: "KONCERT PREMIEROWY",
+    name: "SIEKIRKA TRIO",
+    subtitle: "KONCERT PRZEDPREMIEROWY",
     specialty: "MUZYKA",
-    image: "/artists_images/Milena_Glowacka.png",
+    image: "/artists_images/Siekirka.jpeg",
     mask: "/artists_masks/artist_mask3.svg",
-    description: "Kacper Siekirka - wyróżnia się wyrazistą twórczością, oscylującą wokół gatunków muzyki elektronicznej i alternatywnej, z głębokim naciskiem na emocjonalne kompozycje. Artysta przedstawi swój premierowy program gdzie zawarł również elementy poezji śpiewanej i jazzu.",
+    description: "Jeden z najciekawszych debiutujących składów na scenie alternatywno-elektronicznej. Skład **przedpremierowo** zaprezentuje owoce współpracy duetu SIEKIRKA x SHAIBA. W bezkompromisowy sposób łączą oni korzenie muzyki jazzowej z poetyckim tekstem. Zdecydowanie warto się pojawić - to młody powiew z rodzimego Trójmiasta. Kacper Siekirka na scenie pojawiał się już między innymi u boku Michała Urbaniaka, Marka Withfielda, Laco Déczi czy Otto Williams'a."
   },
   {
     id: "klimza",
     name: "Natalia Klimza",
     specialty: "SZTUKA",
-    image: "/artists_images/innerinnerlife.png",
+    image: "/artists_images/Natalia_Klimza.jpg",
     mask: "/artists_masks/artist_mask5.svg",
-    description: "Polska fotografka i artystka wizualna, znana z pracy jako modelka, co pozwoliło jej na rozwinięcie własnej estetyki fotograficznej. Jej prace koncentrują się na abstrakcji, surrealizmie i impresjonizmie, eksplorując relacje między formą, kolorem i światłem. W marcu 2023 roku opublikowała książkę artystyczną zatytułowaną „Behind an Impression”, która jest przekrojem przez jej najciekawsze prace. Książka podzielona jest na trzy części: „Visual Conversation”, „Essence” i „Sensual Energy”, prezentując różnorodne podejścia do fotografii artystycznej. Klimza aktywnie dzieli się swoimi pracami na Instagramie, gdzie jej profil śledzi ponad 2,6 tysiąca osób. Jej fotografie były prezentowane w różnych publikacjach, w tym w magazynie „KUNST”, gdzie opublikowano jej zdjęcia oraz krótki wywiad. Dodatkowo, jej prace były prezentowane w magazynie „Rekt”, gdzie współpracowała z modelką Marią Camino.",
+    description: "Kuratorka płaszczyzny wizualnej Stref Czasowych, gdzie połączy fotografię, film i instalację. Przygotowała projekt, w którym podejmuje temat rytuału przejścia. Jej twórczość koncentruje się na poszukiwaniu wizualnych i cielesnych języków opisu rzeczywistości w dialogu z estetyką i filozofią Wschodu.\n"
++"\nPolska artystka wizualna i fotografka. Jej prace były publikowane w ponad trzydziestu międzynarodowych magazynach, m.in. L'Officiel, Schön!, CAP 74024, K MAG, Acumen czy Aesthetica. W 2023 roku ukazała się jej książka fotograficzna Behind an Impression (Snap Collective, Paryż), dostępna także w Tokio."
+  },
+  {
+    id: "gwiazdowska",
+    name: "Natalia Gwiazdowska",
+    specialty: "SZTUKA",
+    image: "/artists_images/Natalia_Gwiazdowska.jpg",
+    mask: "/artists_masks/artist_mask3.svg",
+    description: "Rzeźbiarka, edukatorka, a także scenografka Festiwalu Spokój, ściśle powiązana z Trójmiastem. Interesuje ją rzemiosło - poza sztuką konceptualną poświęca się renowacji architektury, drewna i wyplataniu wikliny. Uczestniczka licznych wystaw oraz laureatka konkursów, m. in. ArtNoble 2021 czy V SBMFR w Poznaniu.\n"
++"\nNa Strefach Czasowych będzie kuratorką części instalacji przestrzennych i dekoracji."
+
   },
   {
     id: "popowicz",
     name: "Ada Popowicz",
     specialty: "SZTUKA",
-    image: "/artists_images/Milena_Glowacka.png",
-    mask: "/artists_masks/artist_mask3.svg",
-    description: "Opis artysty do uzupełnienia.",
+    image: "/artists_images/Ada_Popowicz.jpg",
+    mask: "/artists_masks/artist_mask5.svg",
+    description: "Multidyscyplinarna projektantka i strategistka łącząca w swojej pracy fun i funkcjonalność. Jej portfolio łączy cyfrowe realizacje z fizycznymi obiektami—od identyfikacji wizualnych i stron internetowych po biżuterię i tekstylia.\n" 
++"\nDla Stref Czasowych opracowała kompleksową identyfikację wizualną, która graficznie interpretuje wiodące festiwal tematy przejścia, czasu i transformacji. Projekt nawiązuje do podziałów czasowych na mapie świata oraz kartograficznych wykrojów globusa, tworząc spójny system wizualny, który doskonale oddaje charakter wydarzenia.",
   },
     {
     id: "wh0wh0",
@@ -65,18 +79,17 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/Wh0Wh0.jpg",
     mask: "/artists_masks/artist_mask3.svg",
-    description: "Solowy projekt perkusisty Jacka Prościńskiego. Jest to unikalny eksperyment mający na celu połączenie intensywności i precyzji muzyki elektronicznej. Podczas występów na żywo artysta wykorzystuje własnoręcznie zbudowany elektroakustyczny zestaw perkusyjny. Realizuje w ten sposób głęboko zakorzenione marzenie, by tworzyć i występować niezależnie jako solowy perkusista. Jest to kanał jego muzycznej ciekawości oraz testowanie własnych umiejętności, przekraczające granice tradycyjnej gry na perkusji i "
-+ "eksplorujące możliwości zarówno instrumentu, jak i samego artysty. Jacek Prościński od lat aktywnie działa na scenie muzycznej - współtworzył Llovage z Olo Walickim, projekt Mu z Tymonem Tymańskim, a także duet Lasy. Gra w zespole Perfect Son Tobiasza Bilińskiego, był również członkiem nieistniejącego już delay_ok, grał także z Marią Peszek.",
-  },
+    description: "Solowy projekt perkusisty Jacka Prościńskiego. Jest to **unikalny eksperyment** mający na celu połączenie intensywności i precyzji muzyki elektronicznej. Podczas występów na żywo artysta wykorzystuje własnoręcznie zbudowany elektroakustyczny zestaw perkusyjny.\n"
++"\nJacek Prościński od lat aktywnie działa na scenie muzycznej - współtworzył Llovage z Olo Walickim, projekt Mu z Tymonem Tymańskim, a także duet LASY. Gra w zespole Perfect Son Tobiasza Bilińskiego, był również członkiem delay_ok i grał z Marią Peszek.",
+    },
    {
     id: "ksawery",
     name: "Ksawery Komputery",
     specialty: "MUZYKA",
     image: "/artists_images/KsaweryKomputery.jpg",
     mask: "/artists_masks/artist_mask5.svg",
-    description: "Polskie studio kreatywne założone przez artystę nowych mediów Ksawerego Kirklewskiego. Łączy sztukę generatywną, design i nowe technologie, tworząc immersyjne doświadczenia wizualne - od interaktywnych instalacji, przez animacje, po performance audiowizualne i dzieła fizyczno-cyfrowe. "
-+ "Studio specjalizuje się w projektach opartych na systemach generatywnych, interakcji człowiek-komputer i narracjach czasu rzeczywistego. Ich prace balansują między światem fizycznym a cyfrowym, wykorzystując światło, dźwięk i ruch. "
-+ "Wśród słynnych realizacji znalazły się m.in. instalacje sceniczne dla Childish Gambino i zespołu Juliana Casablancasa - The Voidz, projekty FLUX, ENTER, LOTUS oraz teledysk Symphony in Acid dla Maxa Coopera.",
+    description: "Znane na całym świecie polskie studio kreatywne założone przez artystę nowych mediów Ksawerego Kirklewskiego. Łączy sztukę generatywną, design i nowe technologie, tworząc **immersyjne doświadczenia wizualne** - od interaktywnych instalacji, przez animacje, po performance audiowizualne i dzieła fizyczno-cyfrowe. "
+    +"Studio specjalizuje się w projektach opartych na systemach generatywnych, interakcji człowiek-komputer i **narracjach czasu rzeczywistego**. Wśród słynnych realizacji znalazły się m.in. instalacje sceniczne dla Childish Gambino i zespołu Juliana Casablancasa - The Voidz, projekty FLUX, ENTER, LOTUS oraz teledysk Symphony in Acid dla Maxa Coopera.",
   },
   {
     id: "nene",
@@ -84,7 +97,7 @@ export const artists = [
     specialty: "MUZYKA",
     image: "/artists_images/Nene_Heroine.jpg",
     mask: "/artists_masks/artist_mask3.svg",
-    description: "Trójmiejski zespół w stylistyce Jazz / Psychedelic. Ich twórczość to mikstura analogowych brzmień, dubu, post-rocka, improwizacji oraz komunikatywnych i emocjonalnych melodii wykonywanych przez grupę wybitnych muzyków. Po bardzo dobrze przyjętym debiutanckim albumie „Total Panorama” (Alpaka Records), zespół prezentuje nowy program pod tytułem „MOVA”. Jest to rozwinięcie dotychczasowej eksploracji muzycznego ,,tripu’’, w który artyści zabierają słuchaczy. Publiczność Nene Heroine jest znacznie szersza, niż zamknięte grono wielbicieli tylko jednego gatunku. Muzycy zespołu nie lubią kompromisów, a jazz traktują wyłącznie jako punkt wyjścia do tworzenia nowych struktur. „MOVA” jest pretekstem do dalszych poszukiwań własnego stylu oraz pójścia o krok dalej i połączenia sfery dźwiękowej z aspektem wizualnym na scenie.",
+    description: "Trójmiejski zespół, **przenoszący do innej rzeczywistości**. Ich twórczość to mikstura analogowych brzmień, dubu, post-rocka, improwizacji oraz komunikatywnych i emocjonalnych melodii wykonywanych przez grupę wybitnych muzyków. Muzycy zespołu nie lubią kompromisów, a jazz traktują wyłącznie jako punkt wyjścia do tworzenia nowych struktur. Album „MOVA” jest pretekstem do dalszych poszukiwań własnego stylu oraz pójścia o krok dalej i połączenia sfery dźwiękowej z aspektem wizualnym na scenie.",
   },
     {
     id: "glowacka",
@@ -93,19 +106,18 @@ export const artists = [
     image: "/artists_images/Milena_Glowacka.png",
     mask: "/artists_masks/artist_mask5.svg",
     description:
-      "Przyciągając uwagę publiczności swoimi wyjątkowymi poszukiwaniami dźwiękowymi, polska producentka techno i DJ-ka Milena Głowacka od 2013 roku kształtuje swój własny, charakterystyczny styl. Jej twórczość to połączenie hipnotycznego, psychodelicznego techno z dystopijnymi krajobrazami dźwiękowymi. Jako rezydentka klubu Drugi Dom w Gdyni, jest kuratorką serii Pulse Direct Drive. Jej utwory ukazały się także nakładem Semantica Records, Delirio oraz ostatnio w wytwórni Inner Tension. Oprócz działalności muzycznej, Milena skomponowała muzykę do filmu Concrete Circumstance.",
-  },
-  {
+    "Polska producentka techno i DJ-ka Milena Głowacka, która już od 2013 roku kształtuje swój własny, charakterystyczny styl. Jej twórczość to połączenie hipnotycznego, psychodelicznego techno z _dystopijnymi krajobrazami dźwiękowymi_. Oprócz działalności muzycznej, Milena skomponowała muzykę do filmu _Concrete Circumstance_.",
+    },
+    {
     id: "lins",
     name: "Kasia Lins i Piotr Chęcki",
     subtitle : "PROJEKT SPECJALNY",
     specialty: "MUZYKA",
     image: "/artists_images/Kasia_Lins.jpg",
     mask: "/artists_masks/artist_mask3.svg",
-    description: "Kasia Lins - wokalistka, pianistka i autorka tekstów, której twórczość łączy alternatywny pop z elementami rocka i soulu. Znana z magnetyzującego głosu i pełnych emocji koncertów, Lins zdobyła uznanie ostatnim albumem „Omen”, w którym porusza tematy miłości, winy i przebaczenia. Jej muzyka to mieszanka melancholii i siły."
+    description: "**NAJBARDZIEJ UNIKALNY PROJEKT STREF CZASOWYCH.** Specjalnie na ten festiwal powstanie projekt specjalny, oparty na twórczości z albumu _OMEN_ (2023). Będą to ambitne rearanżacje w intymnym wydaniu - duecie Kasi z saksofonistą Piotrem Chęckim. W ogromnej, postindustrialnej przestrzeni, występ niemalże acapella już zostanie na zawsze w pamięci Uczestników. Pozwoli się im rozpłynąć i ponownie scalić w większą całość.\n"
++"\nKasia Lins - wokalistka, pianistka i autorka tekstów, której twórczość łączy alternatywny pop z elementami soulu. Znana z magnetyzującego głosu i pełnych emocji koncertów. Zdobyła uznanie albumem _OMEN_, w którym porusza tematy miłości, winy i przebaczenia. Jej muzyka to mieszanka melancholii i siły.\n"
++"\nPiotr Chęcki - saksofonista, kompozytor oraz producent. Znany z gry z Nene Heroine, Szczylem, Wojtek Mazolewski Quintet, Pink Freud, HÉR, Hatti Vatti, i wielu wielu innych. Brzmienie jego saksofonu stało się charakterystycznym elementem w wymienionych projektach. Artysta nie boi się przekraczać granic, wręcz je zaciera."
 
-+ "\nPiotr Chęcki - Saksofonista, kompozytor oraz producent. Znany z gry w Nene Heroine, Wojtek Mazolewski Quintet, Pink Freud, HÉR, Hatti Vatti, i wielu wielu innych. Brzmienie jego saksofonu stało się charakterystycznym elementem w wymienionych projektach. Artysta nie boi się przekraczać granic, wręcz je zaciera. W 2025 r. debiutuje jako solista - „PE” to jego pierwszy własny album, na który składają się akustyczno-elektroniczne kompozycje."
-
-+ "\nW tym elektryzującym połączeniu istnieje ogromny ładunek intymności i subtelności. Artyści zabiorą nas w minimalistyczną podróż po płycie „Omen” (Piotr również brał udział w sesji nagraniowej albumu) i twórczości artystki na dwa instrumenty: pianina i saksofonu, wsparte głosem Kasi. Szykujcie się na występ pełen skrajnych emocji.",
   },
 ];
