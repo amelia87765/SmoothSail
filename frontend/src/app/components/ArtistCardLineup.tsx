@@ -33,6 +33,40 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
       document.head.removeChild(link);
     };
   }, []);
+  const DescriptionText = () => {
+    const formatText = (text: string) => {
+      const parts = text.split(/(\*\*.*?\*\*|_.*?_)/);
+
+      return parts
+        .map((part, index) => {
+          if (!part) return null;
+          if (part.startsWith("**") && part.endsWith("**")) {
+            return <strong key={index}>{part.slice(2, -2)}</strong>;
+          }
+          if (part.startsWith("_") && part.endsWith("_")) {
+            return <em key={index}>{part.slice(1, -1)}</em>;
+          }
+          return part;
+        })
+        .filter(Boolean);
+    };
+
+    return (
+      <p
+        style={{ fontFamily: "gil-sans-nova, sans-serif", fontWeight: 500 }}
+        className="text-grey text-[clamp(0.9rem,1.4vi,1.4rem)] leading-relaxed pt-[2em]"
+      >
+        {typeof artist.description === "string"
+          ? artist.description.split("\n").map((line: string, idx: number) => (
+              <React.Fragment key={idx}>
+                {formatText(line)}
+                <br />
+              </React.Fragment>
+            ))
+          : artist.description}
+      </p>
+    );
+  };
 
   return (
     <div className="w-full h-[clamp(45svh,55dvh,65lvh)] flex rounded-2xl overflow-hidden relative">
@@ -85,12 +119,7 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
       {/* PRAWA STRONA */}
       <div className="w-1/2 bg-[#9ea69d] rounded-r-2xl flex flex-col justify-between p-6 relative z-40">
         <div className="overflow-y-auto pr-2 mt-6">
-          <p
-            style={{ fontFamily: "gil-sans-nova, sans-serif", fontWeight: 500 }}
-            className="text-black text-[clamp(0.9rem,1.2vi,1.3rem)] leading-relaxed"
-          >
-            {artist.description}
-          </p>
+          <DescriptionText />
         </div>
 
         {/* PRZYCISKI (ELIPSY) */}

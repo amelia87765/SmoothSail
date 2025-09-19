@@ -5,15 +5,25 @@ export default function Tickets() {
   return (
     <section className="bg-gradient-to-b from-black via-[#4f554e] to-black w-full flex flex-col items-center relative overflow-x-hidden">
       <div className="z-50 text-center md:mt-[8rem]">
-        <p className="text-[clamp(2rem,3vw,4.5rem)] text-light_blue px-2">
+        <p className="text-[clamp(1.8rem,2.5vw,3.5rem)] text-light_blue px-2">
           <em>
             {" "}
             Stworzyliśmy coś, co znacząco wymyka się poza percepcję czasu.{" "}
           </em>
         </p>
-        <h2 className="text-[clamp(3rem,8vw,9rem)] text-red leading-tight mt-[12rem]">
+        <h2 className="text-[clamp(3rem,7vw,9rem)] text-red leading-tight mt-[12rem]">
           EDYCJA 2025 (-1)
         </h2>
+        <p className="text-[clamp(1rem,2vw,2.5rem)] text-blue mt-2 text-center max-w-[80vw] mx-auto px-4">
+          25. października, zmiana czasu z letniego na zimowy
+        </p>
+        <div className="flex justify-center mt-4">
+          <img
+            src={"logo_strefy.svg"}
+            alt="logo"
+            className="w-[clamp(8rem,16vw,14rem)] h-[clamp(6rem,12vw,8rem)] object-center z-50"
+          />
+        </div>
         <p className="text-[clamp(1rem,2vw,2.5rem)] text-light_blue mt-8 text-justify max-w-[80vw] mx-auto px-4">
           Nowy festiwal w Trójmieście oparty na narracyjności i nietuzinkowej
           koncepcji, gdzie starannie dobrane koncerty uzupełniają się z licznymi
@@ -29,7 +39,52 @@ export default function Tickets() {
           <br />
           Nie opieraj się temu. Przyjdź, poczuj, doświadcz - w pełni.
         </p>
+        <div className="w-full max-w-[70vw] mx-auto mt-16">
+          <div className="flex flex-col gap-4 text-black text-[clamp(0.9rem,1.5vw,1.2rem)]">
+            <div className="flex gap-12">
+              <div className="w-56 shrink-0 font-mono text-left">
+                UTC+0 FOGGY SUNRISE
+              </div>
+              <div className="flex-1">
+                do 29.09, 11:59 lub do wyczerpania puli
+              </div>
+              <div className="w-20 text-right">49zł</div>
+            </div>
+
+            <div className="flex gap-12">
+              <div className="w-56 shrink-0 font-mono text-left">
+                UTC+1 SMOOTH MORNIN'
+              </div>
+              <div className="flex-1">
+                do 09.10, 11:59 lub do wyczerpania puli
+              </div>
+              <div className="w-20 text-right">69zł</div>
+            </div>
+
+            <div className="flex gap-12">
+              <div className="w-56 shrink-0 text-left">UTC+2 FULL NOON</div>
+              <div className="flex-1">
+                do 24.10, 23:59 lub do wyczerpania puli
+              </div>
+              <div className="w-20 text-right">89zł</div>
+            </div>
+
+            <div className="flex gap-12">
+              <div className="w-56 shrink-0 font-mono text-left">
+                UTC+3 SUNSET
+              </div>
+              <div className="flex-1">
+                w dniu wydarzenia - na bramkach i online
+              </div>
+              <div className="w-20 text-right">99zł</div>
+            </div>
+          </div>
+        </div>
+        <p className="text-[clamp(0.7rem,1.25vw,1rem)] text-light_blue mt-12 text-center max-w-[80vw] mx-auto px-4">
+          Kwoty przy zakupie mogą być powiększone o prowizję Operatora.
+        </p>
       </div>
+
       <div
         id="going_frame"
         className="w-[80vw] bg-black/30 rounded-lg mt-12 z-50"
