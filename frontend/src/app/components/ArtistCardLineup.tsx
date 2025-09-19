@@ -57,39 +57,33 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
           )}
         </div>
 
-        <div className="flex flex-col px-4 py-3 h-[30%] bg-artist_bg">
-          <span className="text-white text-[clamp(1.2rem,2vi,1.8rem)]">
-            {artist.name}
-          </span>
-          {artist.subtitle && (
-            <span
-              style={{
-                fontFamily: "gil-sans-nova, sans-serif",
-                fontWeight: 500,
-              }}
-              className="text-white text-[clamp(0.8rem,1.5vi,1rem)]"
-            >
-              {artist.subtitle}
+        <div className="flex justify-between items-center px-[clamp(1rem,2vw,1.5rem)] py-[1em]">
+          <div className="flex flex-col">
+            <span className="text-grey text-[clamp(1.2rem,3vi,2rem)]">
+              {artist.name}
             </span>
-          )}
+            {artist.subtitle && (
+              <span
+                style={{
+                  fontFamily: "gil-sans-nova, sans-serif",
+                  fontWeight: 500,
+                  marginTop: "-0.3rem",
+                  transition: "margin-top 0.5s ease-in-out",
+                }}
+                className="text-grey text-[clamp(0.8rem,1.8vi,1rem)] "
+              >
+                {artist.subtitle}
+              </span>
+            )}
+          </div>
+          <span className="text-[clamp(0.75rem,1.5vi,1rem)] bg-red text-black px-[0.75em] py-[0.25em] rounded-full">
+            {artist.specialty}
+          </span>
         </div>
       </div>
 
       {/* PRAWA STRONA */}
       <div className="w-1/2 bg-[#9ea69d] rounded-r-2xl flex flex-col justify-between p-6 relative z-40">
-        {/* SPECIALTY */}
-        <div className="absolute top-4 right-4">
-          <span
-            className={
-              optima.className +
-              " text-[clamp(0.8rem,1.2vi,1rem)] bg-red text-black px-4 py-1 rounded-full"
-            }
-          >
-            {artist.specialty}
-          </span>
-        </div>
-
-        {/* OPIS */}
         <div className="overflow-y-auto pr-2 mt-6">
           <p
             style={{ fontFamily: "gil-sans-nova, sans-serif", fontWeight: 500 }}

@@ -65,7 +65,7 @@ export default function Partnerzy() {
           PARTNERZY
         </h2>
         <p className="text-[clamp(1rem,2vw,2rem)] text-light_blue mt-[0.5rem] md:mt-[-1rem]">
-          Dołącz do nas i stwórzmy to razem
+          Dołącz do nas i stwórzmy to razem!
         </p>
       </div>
 
