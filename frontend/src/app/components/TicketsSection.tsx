@@ -21,7 +21,7 @@ export default function Tickets() {
           <img
             src={"logo_strefy.svg"}
             alt="logo"
-            className="w-[clamp(8rem,16vw,14rem)] h-[clamp(6rem,12vw,8rem)] object-center z-50"
+            className="w-[clamp(9rem,18vw,20rem)] h-[clamp(6rem,12vw,14rem)] object-center z-50"
           />
         </div>
         <p className="text-[clamp(1rem,2vw,2.5rem)] text-light_blue mt-8 text-justify max-w-[80vw] mx-auto px-4">
@@ -39,58 +39,71 @@ export default function Tickets() {
           <br />
           Nie opieraj się temu. Przyjdź, poczuj, doświadcz - w pełni.
         </p>
-        <div className="w-full max-w-[70vw] mx-auto mt-16">
-          <div className="flex flex-col gap-4 text-black text-[clamp(0.9rem,1.5vw,1.2rem)]">
+        <h2 className="text-[clamp(3rem,7vw,9rem)] text-red leading-tight mt-[8rem]">
+          BILETY
+        </h2>
+        <div className="w-full max-w-[70vw] items-center mx-auto mt-16">
+          <div className="flex flex-col gap-4 text-light_blue text-[clamp(0.9rem,1.75vw,2.5rem)]">
             <div className="flex gap-12">
-              <div className="w-56 shrink-0 font-mono text-left">
-                UTC+0 FOGGY SUNRISE
+              <div className="w-[24vw] shrink-0 font-mono text-left">
+                UTC+0 // FOGGY SUNRISE
               </div>
-              <div className="flex-1">
+              <div className="flex-1 text-left">
                 do 29.09, 11:59 lub do wyczerpania puli
               </div>
-              <div className="w-20 text-right">49zł</div>
+              <div className="w-20 text-right">
+                <strong>49zł</strong>
+              </div>
             </div>
 
             <div className="flex gap-12">
-              <div className="w-56 shrink-0 font-mono text-left">
-                UTC+1 SMOOTH MORNIN'
+              <div className="w-[24vw] shrink-0 font-mono text-left">
+                UTC+1 // SMOOTH MORNIN'
               </div>
-              <div className="flex-1">
+              <div className="flex-1 text-left">
                 do 09.10, 11:59 lub do wyczerpania puli
               </div>
-              <div className="w-20 text-right">69zł</div>
+              <div className="w-20 text-right">
+                <strong>69zł</strong>
+              </div>
             </div>
 
             <div className="flex gap-12">
-              <div className="w-56 shrink-0 text-left">UTC+2 FULL NOON</div>
-              <div className="flex-1">
+              <div className="w-[24vw] shrink-0 font-mono text-left">
+                UTC+2 // FULL NOON
+              </div>
+              <div className="flex-1 text-left">
                 do 24.10, 23:59 lub do wyczerpania puli
               </div>
-              <div className="w-20 text-right">89zł</div>
+              <div className="w-20 text-right">
+                <strong>89zł</strong>
+              </div>
             </div>
 
             <div className="flex gap-12">
-              <div className="w-56 shrink-0 font-mono text-left">
-                UTC+3 SUNSET
+              <div className="w-[24vw] shrink-0 font-mono text-left">
+                UTC+3 // SUNSET
               </div>
-              <div className="flex-1">
+              <div className="flex-1 text-left">
                 w dniu wydarzenia - na bramkach i online
               </div>
-              <div className="w-20 text-right">99zł</div>
+              <div className="w-20 text-right">
+                <strong>99zł</strong>
+              </div>
             </div>
           </div>
         </div>
-        <p className="text-[clamp(0.7rem,1.25vw,1rem)] text-light_blue mt-12 text-center max-w-[80vw] mx-auto px-4">
+        <p className="text-[clamp(0.7rem,1.5vw,1.5rem)] text-light_blue mt-12 mb-12 text-center max-w-[80vw] mx-auto px-4">
           Kwoty przy zakupie mogą być powiększone o prowizję Operatora.
         </p>
       </div>
 
       <div
         id="going_frame"
-        className="w-[80vw] bg-black/30 rounded-lg mt-12 z-50"
+        className="w-[80vw] bg-black/30 rounded-lg z-50"
       ></div>
       <div className="z-50 text-center mt-14 mb-[18rem]">
-        <p className="text-[clamp(1rem,2vw,2.5rem)] text-light_blue mt-8 text-justify max-w-[80vw] mx-auto px-4">
+        <p className="text-[clamp(1rem,2vw,2.5rem)] text-light_blue mt-[8rem] text-justify max-w-[80vw] mx-auto px-4">
           Zadbamy o to, aby każdy występ był prawdziwie wyjątkowym
           doświadczeniem: koncertem premierowym lub projektem specjalnym
           przygotowanym pod to wydarzenie, a metafory zmiany i przejścia
