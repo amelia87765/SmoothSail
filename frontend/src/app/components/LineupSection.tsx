@@ -5,19 +5,17 @@ import ArtistCardLineup from "./ArtistCardLineup";
 
 export default function LineupSection() {
   return (
-    <section className="w-full min-h-screen bg-black py-16 px-4 sm:px-6 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-[clamp(3rem,10vw,8rem)] text-light_blue text-center mb-16 leading-none z-50">
-          LINE-UPsi
-        </h2>
+    <section className="w-full min-h-screen bg-black py-40 flex flex-col items-center relative z-5">
+      <h2 className="text-[clamp(3rem,10vw,8rem)] text-light_blue text-center mb-16 leading-none z-50">
+        LINE-UPsi
+      </h2>
 
-        <div className="flex flex-col gap-12 md:gap-16">
-          {artists.map((artist) => (
-            <div key={artist.id} className="w-full">
-              <ArtistCardLineup artist={artist} />
-            </div>
-          ))}
-        </div>
+      <div className="w-full flex flex-col items-center gap-12 md:gap-16 px-[5vw]">
+        {artists.map((artist) => (
+          <div key={artist.id} className="w-full">
+            <ArtistCardLineup artist={artist} />
+          </div>
+        ))}
       </div>
     </section>
   );

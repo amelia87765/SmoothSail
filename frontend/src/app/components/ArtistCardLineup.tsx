@@ -54,7 +54,7 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
     return (
       <p
         style={{ fontFamily: "gil-sans-nova, sans-serif", fontWeight: 500 }}
-        className="text-grey text-[clamp(0.9rem,1.4vi,1.4rem)] leading-relaxed pt-[2em]"
+        className="text-grey text-[clamp(0.9rem,1.3vw,1.4rem)] leading-relaxed"
       >
         {typeof artist.description === "string"
           ? artist.description.split("\n").map((line: string, idx: number) => (
@@ -69,10 +69,10 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
   };
 
   return (
-    <div className="w-full h-[clamp(45svh,55dvh,65lvh)] flex rounded-2xl overflow-hidden relative">
+    <div className="w-full h-[clamp(50svh,60dvh,70lvh)] bg-artist_bg rounded-2xl flex flex-col md:flex-row overflow-hidden ">
       {/* LEWA STRONA */}
-      <div className="w-1/2 flex flex-col bg-artist_bg rounded-l-2xl overflow-hidden relative z-50">
-        <div className="relative w-full h-[70%] overflow-hidden">
+      <div className="w-1/2 flex flex-col bg-artist_bg rounded-l-2xl overflow-hidden relative z-50 ">
+        <div className="relative w-full aspect-[4/5] overflow-hidden py-4">
           <Image
             src={artist.image}
             alt={artist.name}
@@ -93,7 +93,7 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
 
         <div className="flex justify-between items-center px-[clamp(1rem,2vw,1.5rem)] py-[1em]">
           <div className="flex flex-col">
-            <span className="text-grey text-[clamp(1.2rem,3vi,2rem)]">
+            <span className="text-grey text-[clamp(1.2rem,4vw,2rem)]">
               {artist.name}
             </span>
             {artist.subtitle && (
@@ -104,7 +104,7 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
                   marginTop: "-0.3rem",
                   transition: "margin-top 0.5s ease-in-out",
                 }}
-                className="text-grey text-[clamp(0.8rem,1.8vi,1rem)] "
+                className="text-grey text-[clamp(0.8rem,2.5vw,1rem)] "
               >
                 {artist.subtitle}
               </span>
@@ -117,8 +117,8 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
       </div>
 
       {/* PRAWA STRONA */}
-      <div className="w-1/2 bg-[#9ea69d] rounded-r-2xl flex flex-col justify-between p-6 relative z-40">
-        <div className="overflow-y-auto pr-2 mt-6">
+      <div className="w-1/2 bg-artist_bg rounded-r-2xl flex flex-col justify-between p-8 relative z-40">
+        <div className="overflow-y-auto pr-2">
           <DescriptionText />
         </div>
 
