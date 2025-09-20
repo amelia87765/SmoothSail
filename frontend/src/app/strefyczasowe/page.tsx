@@ -7,13 +7,14 @@ import CountdownTimer from "../components/CountdownTimer";
 import FestivalSection from "../components/FestivalSection";
 import MovieSection from "../components/MovieSection";
 import FloatingTextSection from "../components/FloatingTextSection";
-import Partners4Section from "../components/Partners4Section";
+import Partners4SectionUsers from "../components/Partners4SectionUsers";
 import Footer from "../components/Footer";
 import TicketsSection from "../components/TicketsSection";
 import FestivalSectionStatic from "../components/FestivalSectionStatic";
 import { usePreloadAssets } from "../hooks/usePreloadAssets";
 import NoiseBackground from "../components/NoiseBackground";
 import LineupSection from "../components/LineupSection";
+import Menu from "../components/Menu";
 
 const optima = localFont({
   src: "../../../public/fonts/URWClassico.ttf",
@@ -60,7 +61,7 @@ export default function Page() {
         </button>
       )}
 
-      <div className="fixed inset-0 bg-black z-6"></div>
+      <div className="fixed inset-0 bg-[#231F20] z-6"></div>
       {changeBg && (
         <div className="fixed inset-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red z-4"></div>
       )}
@@ -101,6 +102,7 @@ export default function Page() {
       )}
       {festivalAnimationFinished && (
         <>
+          <Menu />
           <FestivalSectionStatic>
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[999]">
               <CountdownTimer />
@@ -120,7 +122,7 @@ export default function Page() {
           </section>
           <LineupSection />
           <section id="partners" className="min-h-screen w-full">
-            <Partners4Section />
+            <Partners4SectionUsers />
           </section>
           <Footer />
         </>
