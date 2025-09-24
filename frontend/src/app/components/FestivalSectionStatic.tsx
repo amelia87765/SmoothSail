@@ -28,7 +28,7 @@ export default function FestivalSectionStatic({
         ))}
       </div>
 
-      <div className="absolute w-full h-full opacity-100">
+      <div className="absolute w-full h-full">
         <img
           src="/frame_red.svg"
           alt="Red Frame"

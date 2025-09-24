@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 const formatBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/);
 

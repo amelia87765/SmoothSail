@@ -38,29 +38,10 @@ export default function Page() {
     "/strefy.svg",
   ]);
 
-  // Funkcja do pomijania intro
-  const skipIntro = () => {
-    setLoadingComplete(true);
-    setShowFestival(false);
-    setFestivalAnimationFinished(true);
-    setShowCountdown(false);
-    setChangeBg(false);
-  };
-
   return (
     <div
       className={`relative w-screen min-h-full overflow-x-hidden ${optima.className}`}
     >
-      {/* Skip button */}
-      {!festivalAnimationFinished && (
-        <button
-          onClick={skipIntro}
-          className="fixed top-4 left-4 z-[2000] bg-black/70 text-light_blue px-4 py-2 rounded-lg shadow hover:bg-black/90 transition-colors"
-        >
-          Skip
-        </button>
-      )}
-
       <div className="fixed inset-0 bg-[#231F20] z-6"></div>
       {changeBg && (
         <div className="fixed inset-0 bg-gradient-to-b from-color_bg_top via-color_bg_mid to-red z-4"></div>
@@ -76,7 +57,6 @@ export default function Page() {
       {!loadingComplete && (
         <LoaderLogo onFinish={() => setLoadingComplete(true)} />
       )}
-
       {loadingComplete && assetsLoaded && (
         <>
           <TitleSection
@@ -86,7 +66,6 @@ export default function Page() {
             showCountDown={() => setShowCountdown(true)}
             onPartAnimationEnd={() => setChangeBg(false)}
           />
-
           {showFestival && !festivalAnimationFinished && (
             <FestivalSection
               onAnimationFinish={() => setFestivalAnimationFinished(true)}
@@ -94,7 +73,6 @@ export default function Page() {
           )}
         </>
       )}
-
       {showCountDown && !festivalAnimationFinished && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[999]">
           <CountdownTimer />
@@ -102,12 +80,16 @@ export default function Page() {
       )}
       {festivalAnimationFinished && (
         <>
-          <Menu />
-          <FestivalSectionStatic>
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[999]">
-              <CountdownTimer />
-            </div>
-          </FestivalSectionStatic>
+          <div className="hidden sm:block">
+            <Menu />
+          </div>
+          <section id="festiwal">
+            <FestivalSectionStatic>
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[999]">
+                <CountdownTimer />
+              </div>
+            </FestivalSectionStatic>
+          </section>
           <section
             id="movie"
             className="h-[33vh] sm:h-[66vh] lg:min-h-screen w-full"
@@ -117,11 +99,13 @@ export default function Page() {
           <section id="floating-words" className="min-h-screen w-full">
             <FloatingTextSection />
           </section>
-          <section id="tickets" className="min-h-screen w-full">
+          <section id="bilety" className="relative min-h-screen w-full">
             <TicketsSection />
           </section>
-          <LineupSection />
-          <section id="partners" className="min-h-screen w-full">
+          <section id="lineup" className="min-h-screen w-full">
+            <LineupSection />
+          </section>
+          <section id="partnerzy" className="min-h-screen w-full">
             <Partners4SectionUsers />
           </section>
           <Footer />

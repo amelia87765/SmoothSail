@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 const formatBoldText = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*)/);
 
@@ -49,7 +47,7 @@ const accordionData = [
 
 export default function Partnerzy() {
   return (
-    <section className="bg-gradient-to-b from-black via-partners_bg to-[#231F20] w-full px-4 sm:px-6 py-16 md:py-20 lg:py-24 flex flex-col items-center gap-12 md:gap-16 relative overflow-x-hidden">
+    <section className="bg-gradient-to-b from-black via-partners_bg to-[#231F20] w-full px-4 sm:px-6 py-2 md:py-12 lg:py-24 flex flex-col items-center gap-12 md:gap-16 relative overflow-x-hidden">
       <div className="z-50 text-center">
         <h2 className="text-[clamp(3rem,8vw,9rem)] text-light_blue leading-tight">
           PARTNERZY

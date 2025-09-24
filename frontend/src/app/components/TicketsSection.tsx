@@ -42,10 +42,10 @@ export default function Tickets() {
         <h2 className="text-[clamp(3rem,7vw,9rem)] text-red leading-tight mt-[8rem]">
           BILETY
         </h2>
-        <div className="w-full max-w-[70vw] items-center mx-auto mt-16">
+        <div className="w-full max-w-[80vw] items-center mx-auto mt-16">
           <div className="flex flex-col gap-4 text-light_blue text-[clamp(0.9rem,1.75vw,2.5rem)]">
             <div className="flex gap-12">
-              <div className="w-[24vw] shrink-0 font-mono text-left">
+              <div className="w-[28vw] shrink-0 font-mono text-left">
                 UTC+0 // FOGGY SUNRISE
               </div>
               <div className="flex-1 text-left">
@@ -57,8 +57,8 @@ export default function Tickets() {
             </div>
 
             <div className="flex gap-12">
-              <div className="w-[24vw] shrink-0 font-mono text-left">
-                UTC+1 // SMOOTH MORNIN'
+              <div className="w-[28vw] shrink-0 font-mono text-left">
+                UTC+1 // SMOOTH MORNIN&apos;
               </div>
               <div className="flex-1 text-left">
                 do 09.10, 11:59 lub do wyczerpania puli
@@ -69,7 +69,7 @@ export default function Tickets() {
             </div>
 
             <div className="flex gap-12">
-              <div className="w-[24vw] shrink-0 font-mono text-left">
+              <div className="w-[28vw] shrink-0 font-mono text-left">
                 UTC+2 // FULL NOON
               </div>
               <div className="flex-1 text-left">
@@ -81,7 +81,7 @@ export default function Tickets() {
             </div>
 
             <div className="flex gap-12">
-              <div className="w-[24vw] shrink-0 font-mono text-left">
+              <div className="w-[28vw] shrink-0 font-mono text-left">
                 UTC+3 // SUNSET
               </div>
               <div className="flex-1 text-left">
@@ -91,11 +91,16 @@ export default function Tickets() {
                 <strong>99zł</strong>
               </div>
             </div>
+            <p className="text-[clamp(0.75rem,1.5vw,1.5rem)] text-light_blue mt-6 text-center max-w-[80vw] mx-auto px-4">
+              Kwoty przy zakupie mogą być powiększone o prowizję Operatora.
+            </p>
+            <p className="text-[clamp(0.75rem,1.5vw,1.5rem)] text-light_blue mt-12 mb-12 text-justify max-w-[80vw] mx-auto">
+              Na wydarzeniu będzie możliwość zakupu limitowanego nakładu,
+              ręcznie numerowanego, pamiątkowego artworku edycji 2025 (-1) o
+              rozmiarze 50x70cm, na wysokiej jakości papierze — w cenie 120zł.
+            </p>
           </div>
         </div>
-        <p className="text-[clamp(0.7rem,1.5vw,1.5rem)] text-light_blue mt-12 mb-12 text-center max-w-[80vw] mx-auto px-4">
-          Kwoty przy zakupie mogą być powiększone o prowizję Operatora.
-        </p>
       </div>
 
       <div

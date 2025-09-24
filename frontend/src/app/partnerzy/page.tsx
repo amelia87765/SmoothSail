@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import localFont from "next/font/local";
 import LoaderLogo from "../components/LoaderLogo";
 import TitleSection from "../components/TitleSection";
@@ -21,12 +21,17 @@ const optima = localFont({
 });
 
 export default function Page() {
+  const [hasAccess, setHasAccess] = useState(false);
+  const [inputPassword, setInputPassword] = useState("");
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [showFestival, setShowFestival] = useState(false);
   const [festivalAnimationFinished, setFestivalAnimationFinished] =
     useState(false);
   const [showCountDown, setShowCountdown] = useState(false);
   const [changeBg, setChangeBg] = useState(true);
+
+  const correctPassword = "JoinUsNow!";
+  const storageKey = "partnerzy_access";
 
   const assetsLoaded = usePreloadAssets([
     "/fonts/URWClassico.ttf",
@@ -35,6 +40,74 @@ export default function Page() {
     "/frame_yellow.svg",
     "/strefy.svg",
   ]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(storageKey);
+      if (saved === "true") {
+        setHasAccess(true);
+      }
+    }
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (inputPassword === correctPassword) {
+      localStorage.setItem(storageKey, "true");
+      setHasAccess(true);
+    } else {
+      alert("Błędne hasło");
+    }
+  };
+
+  if (!hasAccess) {
+    return (
+      <div
+        style={{
+          padding: "2rem",
+          color: "black",
+          textAlign: "center",
+          marginTop: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <form onSubmit={handleSubmit} style={{ marginTop: "1rem" }}>
+          <input
+            type="password"
+            placeholder="Wpisz hasło"
+            value={inputPassword}
+            onChange={(e) => setInputPassword(e.target.value)}
+            style={{
+              padding: "0.75rem",
+              marginRight: "0.5rem",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+              fontSize: "1rem",
+              minWidth: "250px",
+            }}
+          />
+          <button
+            type="submit"
+            style={{
+              padding: "0.75rem 1.5rem",
+              borderRadius: "4px",
+              border: "none",
+              backgroundColor: "#007bff",
+              color: "white",
+              cursor: "pointer",
+              fontSize: "1rem",
+            }}
+          >
+            Wejdź
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div
