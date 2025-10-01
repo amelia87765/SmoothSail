@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import React from "react";
+import localFont from "next/font/local";
+
+const akzid = localFont({
+  src: "../../../public/fonts/AkzidGrtskNext.ttf",
+  weight: "400",
+  display: "swap",
+});
 
 export default function Menu() {
   const handleNavigation = (e: React.MouseEvent, targetId: string) => {
@@ -8,22 +15,15 @@ export default function Menu() {
     const target = document.getElementById(targetId);
     if (!target) return;
 
-    if (targetId === "bilety") {
-      const rect = target.getBoundingClientRect();
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const middle =
-        rect.top + scrollTop + rect.height / 2 - window.innerHeight / 2;
-
-      window.scrollTo({ top: middle, behavior: "smooth" });
-    } else {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div className="fixed w-full z-[9999] px-12 py-4 flex justify-between items-center bg-opacity-0">
+    <div
+      className={`fixed w-full z-[9999] px-12 py-4 flex justify-between items-center bg-opacity-0 ${akzid.className}`}
+    >
       <nav className="text-light_blue">
-        <ul className="flex gap-6 text-sm">
+        <ul className="flex gap-6 text-[clamp(0.8rem,1.5vw,1.1rem)]">
           <li>
             <a
               href="#festiwal"

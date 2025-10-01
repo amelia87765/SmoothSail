@@ -21,7 +21,7 @@ export default function EditionsSection() {
           <span> zmiana czasu z letniego na zimowy</span>
         </>
       ),
-      artists: artists.slice(0, 8),
+      artists: artists.slice(0, 9),
     },
     {
       id: "2026_+1",
@@ -36,7 +36,7 @@ export default function EditionsSection() {
           <span>zmiana czasu na letni</span>
         </>
       ),
-      artists: artists.slice(8, 12),
+      artists: artists.slice(9, 13),
     },
     {
       id: "2026_-1",
@@ -51,7 +51,7 @@ export default function EditionsSection() {
           <span>zmiana czasu na zimowy</span>
         </>
       ),
-      artists: artists.slice(12, 13),
+      artists: artists.slice(13, 14),
     },
   ];
 

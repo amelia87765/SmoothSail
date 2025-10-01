@@ -1,25 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+const akzid = localFont({
+  src: "../../../public/fonts/AkzidGrtskNext.ttf",
+  weight: "400",
+  display: "swap",
+});
 
 export default function Footer() {
   const [showContact, setShowContact] = useState(false);
-
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://use.typekit.net/zik8iyz.css";
-    document.head.appendChild(link);
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   return (
     <>
       <footer
-        className="w-full bg-[#231F20] text-light_blue px-[5vw] py-8 relative"
-        style={{ fontFamily: "gil-sans-nova, sans-serif" }}
+        className={`w-full bg-[#231F20] text-light_blue px-[5vw] py-8 relative ${akzid.className}`}
       >
         <div className="w-full flex items-center justify-between relative mb-4 z-50">
           <div className="flex items-center gap-6 sm:gap-10 text-[clamp(0.8rem,1.5vw,1.1rem)] whitespace-nowrap z-10">
