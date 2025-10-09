@@ -7,7 +7,7 @@ export const artists = [
     mask: "/artists_masks/artist_mask3.svg",
     description: "Producent i kompozytor znany z projektów Hatti Vatti czy Hinode Tapes. Na wydarzeniu zaserwuje **nowe**, ambientowe znaleziska winylowe z licznych podróży po świecie, przenosząc nas w inną czasoprzestrzeń. Dosłownie!",
     instagram: "https://www.instagram.com/piotrkalinski.hattivatti/",
-    music: "https://www.youtube.com/watch?v=slMub4NtrSk&list=RDslMub4NtrSk&start_radio=1",
+    music: "https://www.youtube.com/watch?v=3KyPJD0GYzU&t=27s",
   },
   {
     id: "inner",
@@ -40,6 +40,7 @@ export const artists = [
     description: "Mieszka we Włoszech i mimo braku różnicy czasu, zagra na wydarzeniu, przenosząc nas w odległe rewiry. Wywodząca się z trójmiejskiej sceny DJ-ka, która swoją selekcją muzyczną zmusza do refleksji, aby chwilę później eksplodować nieskrępowaną energią. W jej setach gęsta mieszanka emocji spotyka się z ciężarem industrialnego brzmienia i momentami ulgi, które tworzą niezapomnianą podróż. "
       + "\nZagrała na ostatnim z koncertów cyklu _SUNSETY by SmoothSail 2024_.",
     instagram: "https://www.instagram.com/wiktoria.emerai/",
+    music: "https://soundcloud.com/blacklinerecordings/emerai-blr-podcast-51",
   },
   {
     id: "siekirka",
@@ -50,6 +51,7 @@ export const artists = [
     mask: "/artists_masks/artist_mask3.svg",
     description: "Jeden z najciekawszych debiutujących składów na scenie alternatywno-elektronicznej. Skład **przedpremierowo** zaprezentuje owoce współpracy duetu SIEKIRKA x SHAIBA. W bezkompromisowy sposób łączą oni korzenie muzyki jazzowej z poetyckim tekstem. Zdecydowanie warto się pojawić - to młody powiew z rodzimego Trójmiasta. Kacper Siekirka na scenie pojawiał się już między innymi u boku Michała Urbaniaka, Marka Withfielda, Laco Déczi czy Otto Williams'a.",
     instagram: "https://www.instagram.com/siekirka_/",
+    music: "https://www.youtube.com/watch?v=t-mimD1jUhY&t=15s",
   },
   {
     id: "klimza",
@@ -82,7 +84,7 @@ export const artists = [
     instagram: "https://www.instagram.com/adapopowicz/",
   },
   {
-    id: "rhyton",
+    id: "rython",
     name: "Maciej Stańczak x Rython",
     specialty: "ZAPACH",
     image: "/artists_images/Maciej_Stanczak.jpeg",
@@ -90,6 +92,17 @@ export const artists = [
     description: "Rhyton to zespół dwóch perfumiarek z Krakowa. Tworzą artystyczną pracownię zapachów, gdzie zajmują się zarówno kompozycją perfum, jak i oprawą zapachową dla wydarzeń i marek. W swoim projekcie skupiają się na tworzeniu kompozycji mocno ukorzenionych w zbiorowych wspomnieniach i kulturze rodzimego kraju.\n"
       + "\nMaciej Stańczak - młody projektant mody i stylista. Tworzy autorskie kolekcje, projekty indywidualne oraz małe serie produktów. Inspiracji szuka głównie w archiwach oraz albumach o sztuce, zestawiając je z analizą codzienności - często podważając, zadając pytania i komentując. Prywatnie interesuje się odkrywaniem niszowych perfum, a fascynacja nimi stała się dopełnieniem jego działań projektowych.",
     instagram: "https://www.instagram.com/maciej.stanczak/",
+  },
+    {
+    id: "blkdot",
+    name: "BLKDOT",
+    specialty: "MUZYKA",
+    image: "/artists_images/BLKDOT.jpg",
+    mask: "/artists_masks/artist_mask5.svg",
+    description: "@blkdottt to producent muzyczny tworzący eksperymentalną elektronikę skupioną wokół analogowych syntezatorów i basu. Cechują go brudne brzmienia pełne „gruzu” - analogowego ziarna i tekstur z zakurzonych winyli.\n"
+    + "\nPodczas swojego specjalnego live actu zaprezentuje pełen przekrój, od granularnych ambientów i dronów z syntezatorów modularnych, aż po basowe brzmienia klubowe romansujące z rytmiką industrial dub i future garage.\n"
+    + "\n**To doświadczenie jednorazowe - nie powtórzy się nigdy i nigdzie w takiej formie.** BLKDOT bawi się resamplingiem na żywo, układając części swoich improwizacji na nowo, tworząc nieprzewidywalne struktury.",
+    instagram: "https://www.instagram.com/blkdottt/",
   },
   {
     id: "wh0wh0",
@@ -141,5 +154,15 @@ export const artists = [
       + "\nKasia Lins - wokalistka, pianistka i autorka tekstów, której twórczość łączy alternatywny pop z elementami soulu. Znana z magnetyzującego głosu i pełnych emocji koncertów. Zdobyła uznanie albumem _OMEN_, w którym porusza tematy miłości, winy i przebaczenia. Jej muzyka to mieszanka melancholii i siły.\n"
       + "\nPiotr Chęcki - saksofonista, kompozytor oraz producent. Znany z gry z Nene Heroine, Szczylem, Wojtek Mazolewski Quintet, Pink Freud, HÉR, Hatti Vatti, i wielu wielu innych. Brzmienie jego saksofonu stało się charakterystycznym elementem w wymienionych projektach. Artysta nie boi się przekraczać granic, wręcz je zaciera.",
     instagram: "https://www.instagram.com/kasialins/",
+  },
+   {
+    id: "xrython",
+    name: "Maciej Stańczak x Rython",
+    specialty: "ZAPACH",
+    image: "/artists_images/Maciej_StanczakxRython.png",
+    mask: "/artists_masks/artist_mask5.svg",
+    description: "Rhyton to zespół dwóch perfumiarek z Krakowa. Tworzą artystyczną pracownię zapachów, gdzie zajmują się zarówno kompozycją perfum, jak i oprawą zapachową dla wydarzeń i marek. W swoim projekcie skupiają się na tworzeniu kompozycji mocno ukorzenionych w zbiorowych wspomnieniach i kulturze rodzimego kraju.\n"
+      + "\nMaciej Stańczak - młody projektant mody i stylista. Tworzy autorskie kolekcje, projekty indywidualne oraz małe serie produktów. Inspiracji szuka głównie w archiwach oraz albumach o sztuce, zestawiając je z analizą codzienności - często podważając, zadając pytania i komentując. Prywatnie interesuje się odkrywaniem niszowych perfum, a fascynacja nimi stała się dopełnieniem jego działań projektowych.",
+    instagram: "https://www.instagram.com/maciej.stanczak/",
   },
 ];

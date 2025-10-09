@@ -132,9 +132,9 @@ export default function ArtistCardLineup({ artist }: ArtistCardLineupProps) {
                 style={{
                   width: 0,
                   height: 0,
-                  borderTop: "clamp(10px,1vw,14px) solid transparent",
-                  borderBottom: "clamp(10px,1vw,14px) solid transparent",
-                  borderLeft: "clamp(18px,2vw,24px) solid #FF4F23",
+                  borderTop: "clamp(18px,2vw,14px) solid transparent",
+                  borderBottom: "clamp(18px,2vw,14px) solid transparent",
+                  borderLeft: "clamp(28px,3vw,34px) solid #FF4F23",
                 }}
               />
             </a>

@@ -4,11 +4,18 @@ import { artists } from "../data/artists";
 import ArtistCardLineup from "./ArtistCardLineup";
 
 export default function LineupSection() {
-  const visibleIds = ["klimza", "gwiazdowska"];
+  const visibleIds = [
+    "hatti",
+    "siekirka",
+    "emerai",
+    "klimza",
+    "gwiazdowska",
+    "xrython",
+  ];
 
-  const visibleArtists = artists.filter((artist) =>
-    visibleIds.includes(artist.id)
-  );
+  const visibleArtists = artists
+    .filter((artist) => visibleIds.includes(artist.id))
+    .sort((a, b) => visibleIds.indexOf(a.id) - visibleIds.indexOf(b.id));
   return (
     <section className="w-full min-h-screen bg-black pt-10 md:pt-20 flex flex-col items-center relative z-5">
       <h2 className="text-[clamp(3rem,10vw,8rem)] text-light_blue text-center mb-16 leading-none z-50">

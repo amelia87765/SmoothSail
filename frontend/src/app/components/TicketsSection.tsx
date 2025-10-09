@@ -90,111 +90,103 @@ export default function Tickets() {
       </div>
       <Script id="going-widget" strategy="afterInteractive">
         {`
-          const eventSlug = 'strefy-czasowe-2025-1';
-          const rundateSlug = 'gdynia-pazdziernik-2025';
-       
-          window.addEventListener("DOMContentLoaded", function () {
-            const iframeContainer = document.getElementById('going_frame');
-            const loadingElement = document.createElement("div");
+const eventSlug = 'strefy-czasowe-2025-1';
+const rundateSlug = 'gdynia-pazdziernik-2025';
 
-            if (document.getElementById("loading-element")) {
-              return;
-            }
+window.addEventListener("DOMContentLoaded", function () {
+  const iframeContainer = document.getElementById('going_frame');
+  const loadingElement = document.createElement("div");
 
-            loadingElement.innerHTML = \`
-              <h2 id="loading-prompt">Trwa ładowanie formularza sprzedaży.</h2>
-              <h3>Formularz nie działa? Kup bilety w <a href="https://goingapp.pl/" rel="dofollow">Going.</a></h3>
-            \`;
-            loadingElement.id = "loading-element";
-            loadingElement.style.fontFamily = "Helvetica, sans-serif";
-            loadingElement.style.textAlign = "center";
-            loadingElement.style.padding = "16px";
+  if (document.getElementById("loading-element")) {
+    return;
+  }
 
-            if (iframeContainer) {
-              iframeContainer.append(loadingElement);
-            }
-          });
+  loadingElement.innerHTML = '<h2 id="loading-prompt">Trwa ładowanie formularza sprzedaży.</h2><h3>Formularz nie działa? Kup bilety w <a href="https://goingapp.pl/" rel="dofollow">Going.</a></h3>';
+  loadingElement.id = "loading-element";
+  loadingElement.style.fontFamily = "Helvetica, sans-serif";
+  loadingElement.style.textAlign = "center";
+  loadingElement.style.padding = "16px";
 
-          (function (G, o, i, n, g) {
-            G.going =
-              G.going ||
-              function () {
-                [].push.apply((G.goingQ = G.goingQ || []), arguments);
-              };
-            G.goingSettings = { gv: '1.0.7' };
-            n = o.getElementsByTagName('head')[0];
-            g = o.createElement('script');
-            g.async = true;
-            g.src = i + '?gv=' + G.goingSettings.gv;
-            n.appendChild(g);
-          })(window, document, 'https://places-script.goingapp.pl/script.js');
+  if (iframeContainer) {
+    iframeContainer.append(loadingElement);
+  }
+});
 
-          const isQueueInAddress = window.location.href.includes('queue=true')
-          const domain = isQueueInAddress ? 'https://queue.goingapp.pl' : 'https://goingapp.pl'
+(function (G, o, i, n, g) {
+  G.going = G.going || function () {
+    [].push.apply((G.goingQ = G.goingQ || []), arguments);
+  };
+  G.goingSettings = { gv: '1.0.7' };
+  n = o.getElementsByTagName('head')[0];
+  g = o.createElement('script');
+  g.async = true;
+  g.src = i + '?gv=' + G.goingSettings.gv;
+  n.appendChild(g);
+})(window, document, 'https://places-script.goingapp.pl/script.js');
 
-          window.addEventListener('message', (event) => {
-              const data = JSON.parse(event.data);
-              if (data.queue && !isQueueInAddress) {
-                  const url = new URL(window.location.href);
-                  url.searchParams.append('queue', 'true');
+const isQueueInAddress = window.location.href.includes('queue=true');
+const domain = isQueueInAddress ? 'https://queue.goingapp.pl' : 'https://goingapp.pl';
 
-                  window.location.assign(url.origin + url.pathname + url.search)
-                  }
-              if (
-              data &&
-              document.getElementById("loading-prompt") &&
-              document.getElementById('going_frame')
-            ) {
-              document.getElementById("loading-prompt")?.remove();
-              document
-                .getElementById('going_frame')
-                .append(document.getElementById("loading-element"));
-            }
-          });
+window.addEventListener('message', (event) => {
+  const data = JSON.parse(event.data);
+  if (data.queue && !isQueueInAddress) {
+    const url = new URL(window.location.href);
+    url.searchParams.append('queue', 'true');
+    window.location.assign(url.origin + url.pathname + url.search);
+  }
+  if (data && document.getElementById("loading-prompt") && document.getElementById('going_frame')) {
+    document.getElementById("loading-prompt")?.remove();
+    document.getElementById('going_frame').append(document.getElementById("loading-element"));
+  }
+});
 
-          going(
-          {
-              type: 'SET_PARENT',
-              payload: 'going_frame',
-          },
-          {
-              type: 'SET_APP_URL',
-              payload: \`\${domain}/pinRundate/\${eventSlug}/\${rundateSlug}/zakup\`,
-          },
-          {
-              type: 'GET_ERROR_FROM_URL',
-              payload: 'error',
-          },
-          {
-              type: 'SET_CURRENT_URL',
-              payload: window.location.href
-          },
-          {
-              type: 'GET_TRANSACTION_FROM_URL',
-              payload: 'transactionId'
-          },
-          {
-              type: "SET_LANGUAGE",
-              payload: 'pl',
-          },
-          {
-              type: 'GET_EVENT_SLUG_FROM_URL',
-              payload: 'eSlug',
-          },
-          {
-              type: 'GET_RUNDATE_SLUG_FROM_URL',
-              payload: 'rSlug',
-          },
-          {
-              type: 'GET_EVENT_ID_FROM_URL',
-              payload: 'rid',
-          }
-          )
+going(
+  {
+    type: 'SET_PARENT',
+    payload: 'going_frame',
+  },
+  {
+    type: 'SET_APP_URL',
+    payload: domain + '/pinRundate/' + eventSlug + '/' + rundateSlug + '/zakup',
+  },
+  {
+    type: 'GET_ERROR_FROM_URL',
+    payload: 'error',
+  },
+  {
+    type: 'SET_CURRENT_URL',
+    payload: window.location.href
+  },
+  {
+    type: 'GET_TRANSACTION_FROM_URL',
+    payload: 'transactionId'
+  },
+  {
+    type: "SET_LANGUAGE",
+    payload: 'pl',
+  },
+  {
+    type: 'GET_EVENT_SLUG_FROM_URL',
+    payload: 'eSlug',
+  },
+  {
+    type: 'GET_RUNDATE_SLUG_FROM_URL',
+    payload: 'rSlug',
+  },
+  {
+    type: 'GET_EVENT_ID_FROM_URL',
+    payload: 'rid',
+  },
+  {
+    type: "LOAD_EXTERNAL_STYLE",
+    payload: 'https://embed-config-meqesdpgvc.s3-eu-west-1.amazonaws.com/smoothsail.css',
+  }
+);
 
-          if (window.location.href.includes("transactionId")) {
-            document.getElementById("loading-element").remove();
-          }
-        `}
+if (window.location.href.includes("transactionId")) {
+  document.getElementById("loading-element").remove();
+}
+`}
       </Script>
     </section>
   );

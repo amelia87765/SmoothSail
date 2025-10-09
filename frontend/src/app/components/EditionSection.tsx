@@ -21,7 +21,7 @@ export default function EditionsSection() {
           <span> zmiana czasu z letniego na zimowy</span>
         </>
       ),
-      artists: artists.slice(0, 9),
+      artists: artists.slice(0, 10),
     },
     {
       id: "2026_+1",
@@ -36,7 +36,7 @@ export default function EditionsSection() {
           <span>zmiana czasu na letni</span>
         </>
       ),
-      artists: artists.slice(9, 13),
+      artists: artists.slice(10, 14),
     },
     {
       id: "2026_-1",
@@ -51,7 +51,7 @@ export default function EditionsSection() {
           <span>zmiana czasu na zimowy</span>
         </>
       ),
-      artists: artists.slice(13, 14),
+      artists: artists.slice(14, 15),
     },
   ];
 
@@ -84,6 +84,11 @@ export default function EditionsSection() {
                   </div>
                 </div>
 
+                {edition.id === "2025_-1" && (
+                  <div className="absolute right-0 top-[50%] -translate-y-1/2 text-light_blue text-[clamp(0.9rem,1.8vw,1.2rem)] whitespace-nowrap">
+                    Kliknij na artystę, żeby dowiedzieć się więcej
+                  </div>
+                )}
                 <img
                   src={edition.logo}
                   alt="logo"

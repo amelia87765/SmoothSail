@@ -1,5 +1,7 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
+
 const TEXTS = [
   "DWIE SCENY",
   "SIEDEM UNIKALNYCH WYSTĘPÓW",
@@ -38,6 +40,9 @@ export default function FestivalSectionStatic({
 
       <div className="absolute left-1/2 top-[49.5%] mb:top-[48%] -translate-x-1/2 -translate-y-1/2 w-full text-red text-[clamp(2.1rem,8vw,7rem)] text-center leading-[0.9] z-50">
         JEDNO <br /> NARRACYJNE <br /> POŁĄCZENIE
+      </div>
+      <div className="absolute bottom-8 right-10 z-50 text-light_blue animate-bounce">
+        <ChevronDown size={52} strokeWidth={2} />
       </div>
       {children}
     </section>

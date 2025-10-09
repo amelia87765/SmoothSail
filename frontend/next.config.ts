@@ -2,10 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/strefyczasowe',
+  //basePath: '/strefyczasowe',
   //basePath: '/partnerzy',
   images: {
-    unoptimized: true, 
+    unoptimized: true,
   },
 };
 

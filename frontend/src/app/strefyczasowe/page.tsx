@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import localFont from "next/font/local";
 import LoaderLogoUsers from "../components/LoaderLogoUsers";
 import CountdownTimer from "../components/CountdownTimer";
@@ -9,12 +9,12 @@ import Partners4SectionUsers from "../components/Partners4SectionUsers";
 import Footer from "../components/Footer";
 import TicketsSection from "../components/TicketsSection";
 import BeforeTicketsSection from "../components/BeforeTicketsSection";
-import FestivalSectionStatic from "../components/FestivalSectionStatic";
 import TitleSectionStatic from "../components/TitleSectionStatic";
 import { usePreloadAssets } from "../hooks/usePreloadAssets";
 import NoiseBackground from "../components/NoiseBackground";
 import LineupSection from "../components/LineupSection";
 import Menu from "../components/Menu";
+import FestivalSectionScroll from "../components/FestivalSectionScroll";
 
 const optima = localFont({
   src: "../../../public/fonts/URWClassico.ttf",
@@ -32,6 +32,30 @@ export default function Page() {
     "/frame_yellow.svg",
     "/strefy.svg",
   ]);
+
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (window.location.hash) {
+        const targetId = window.location.hash.replace("#", "");
+        const target = document.getElementById(targetId);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 100);
+        }
+      }
+    };
+
+    if (loadingComplete && assetsLoaded) {
+      handleHashScroll();
+    }
+
+    window.addEventListener("hashchange", handleHashScroll);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashScroll);
+    };
+  }, [loadingComplete, assetsLoaded]);
 
   return (
     <div
@@ -53,15 +77,15 @@ export default function Page() {
           <div className="block">
             <Menu />
           </div>
-          <section id="home" className="relative min-h-screen w-full">
+          <section id="festiwal" className="relative min-h-screen w-full">
             <TitleSectionStatic>
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[999]">
                 <CountdownTimer />
               </div>
             </TitleSectionStatic>
           </section>
-          <section id="festiwal">
-            <FestivalSectionStatic />
+          <section id="festiwal-section">
+            <FestivalSectionScroll />
           </section>
           <section
             id="movie"
