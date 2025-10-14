@@ -44,6 +44,9 @@ export default function FestivalSectionStatic({
       <div className="absolute bottom-8 right-10 z-50 text-light_blue animate-bounce">
         <ChevronDown size={52} strokeWidth={2} />
       </div>
+      <div className="absolute bottom-8 left-10 z-50 text-light_blue animate-bounce">
+        <ChevronDown size={52} strokeWidth={2} />
+      </div>
       {children}
     </section>
   );

@@ -1,5 +1,5 @@
 "use client";
-
+//dodać jakiś wolniejszy fade-in żeby nie było strzału na wejściu?
 export default function TitleSectionStatic({
   children,
 }: {

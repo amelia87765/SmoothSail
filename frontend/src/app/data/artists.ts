@@ -19,6 +19,7 @@ export const artists = [
     description: "Tomasz Szpaderski - wokalista zespołu KAMP! - jednej z najbardziej wpływowych formacji polskiej elektroniki. Artysta podróżuje ze swoim solowym projektem ambientowym innerinnerlife po Europie, mamy zaszczyt ogłosić, że na Strefach Czasowych **zagra przedpremierowo** swój nadchodzący album.\n"
       + "\nJakby tego było mało - w trakcie tego headline'owego występu nie zabraknie niespodzianek. To tyle na teraz. Bez odbioru!",
     instagram: "https://www.instagram.com/innerinnerlife/",
+    music: "https://www.youtube.com/watch?v=kB48QdIPBdg&list=RDkB48QdIPBdg&t=11s",
   },
   {
     id: "moriko",
@@ -30,6 +31,7 @@ export const artists = [
       + "Mówią, że swoim efemerycznym głosem koi dusze, a w fuzji z muzyką, zmiękcza wszystkie ciemne, zastygłe na przestrzeni czasu serca. "
       + "Od kilku lat aktywnie gra w Szwecji także jako DJ-ka, wystąpiła m.in. na _Boiler Room: Stockholm_. Będzie to jej **pierwszy występ** w Polsce.",
     instagram: "https://www.instagram.com/josephinemoriko/",
+    music: "https://soundcloud.com/retreatradio/foil-15",
   },
   {
     id: "emerai",

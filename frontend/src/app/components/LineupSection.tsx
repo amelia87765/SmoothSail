@@ -5,6 +5,8 @@ import ArtistCardLineup from "./ArtistCardLineup";
 
 export default function LineupSection() {
   const visibleIds = [
+    "inner",
+    "moriko",
     "hatti",
     "siekirka",
     "emerai",

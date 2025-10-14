@@ -19,8 +19,8 @@ export default function LoaderLogo({ onFinish }: Props) {
     isMounted.current = true;
 
     pulseControls.start({
-      scale: [1, 0.95, 1, 0.95, 1],
-      transition: { duration: 3.5, ease: "easeInOut" },
+      scale: [1, 0.95, 1, 0.95],
+      transition: { duration: 2.5, ease: "easeInOut" },
     });
 
     const timer = setTimeout(async () => {
@@ -31,13 +31,13 @@ export default function LoaderLogo({ onFinish }: Props) {
 
       await logoFadeControls.start({
         opacity: 0,
-        transition: { duration: 1.5, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" },
       });
       setShowLogo(false);
 
       await fadeControls.start({
         opacity: 0,
-        transition: { duration: 1.5, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" },
       });
 
       onFinish();
@@ -46,7 +46,7 @@ export default function LoaderLogo({ onFinish }: Props) {
       if (!isMounted.current) return;
       await bgFadeControls.start({
         opacity: 0,
-        transition: { duration: 1, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" },
       });
 
       if (!isMounted.current) return;
